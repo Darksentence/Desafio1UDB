@@ -302,6 +302,7 @@ select {
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
   font-size: 20px;
+  color: var(--morado-principal);
 }
 
 /* Tamaño de letra del navbar */
@@ -329,8 +330,8 @@ select {
   margin-left: 10%;
 }
 
-.btn-nav {
-  background-color: #808080;
+#nav-btn {
+  background-color: var(--morado-principal);
   color: #ffffff;
 }
 
@@ -582,8 +583,12 @@ form #enviar {
 
 /* PAGINA - LEGAL */
 
+.main {
+  margin-top: 11rem;
+}
+
 section h1 {
-  margin: 5rem 0 2rem 0;
+  margin: 5rem 0 10rem 0;
 }
 
 section p {
@@ -595,6 +600,7 @@ section p {
 section span {
   font-weight: 700;
 }
+
 
 /*----- MEDIA QUERIES  -----*/
 
@@ -665,6 +671,7 @@ section span {
     font-size: 150%;
   }
 }
+
 
 /* Hacer que el área de cards actúe como un container y las cards sean más anchas en pantallas grandes */
 .cards-content {
