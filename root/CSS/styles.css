@@ -14,7 +14,6 @@
   width: 100%;
   min-height: 100vh; 
   max-height: 80vh;             /* hero ocupa viewport completo */
-  margin-top: var(--navbar-height);/* evita que el navbar lo tape */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,7 +23,12 @@
 /* fondo siempre cubre todo el hero y se estira con la pantalla */
 .hero-bg {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
   background-image: url('../images/background.jpeg');
   background-repeat: repeat-x !important;
   background-size: auto 100% !important; /* altura = 100% del hero, repetir en X */
@@ -59,7 +63,6 @@
 @media (max-width: 767px) {
   .hero {
     min-height: 40vh;
-    margin-top: calc(var(--navbar-height) - 8px);
     padding: 0; /* quitar padding extra del contenedor */
   }
 
@@ -84,6 +87,7 @@
 /* En pantallas muy grandes: background se estira (cover) y mainpic sigue limitada */
 @media (min-width: 1200px) {
   .hero {
+
     min-height: 100vh;
       max-height: 80vh;
   }
@@ -93,7 +97,6 @@
   }
   .hero-img {
     max-height: 70vh; /* mainpic sigue limitada para no crecer indefinidamente */
-   margin-top: 15vh;
   }
 }
 
@@ -104,6 +107,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: var(--navbar-height);
   }
 
   .hero-picture {
@@ -147,7 +151,6 @@
 /* Ajustes móviles */
 @media (max-width: 767px) {
   .hero {
-    margin-top: calc(var(--navbar-height) - 8px);
     min-height: 40vh;
     padding: 0 12px;
   }
@@ -296,6 +299,7 @@ select {
 .main {
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
+  
 }
 
 .navbar-nav .nav-link {
@@ -584,7 +588,7 @@ form #enviar {
 /* PAGINA - LEGAL */
 
 .main {
-  margin-top: 11rem;
+
 }
 
 section h1 {
@@ -789,13 +793,13 @@ section span {
 
 /* Forzar separación superior de 15vh para la imagen principal */
 .hero-picture {
-  margin-top: 15vh !important;
+
   padding-top: 0 !important;
 }
 
 /* Evitar márgenes contradictorios en la propia imagen */
 .hero-img {
-  margin-top: 5 !important;
+  margin-top: 5vh !important;
 }
 
 /* límite máximo solo en el breakpoint más grande */
@@ -864,7 +868,7 @@ body .hero .hero-bg {
     background-position: top left !important;
   }
 }
-
+bounce
 /* Fix para pantallas muy anchas (4K): extender ligeramente la capa de fondo del hero para evitar seams */
 @media (min-width: 2560px) {
   .hero {
@@ -872,8 +876,9 @@ body .hero .hero-bg {
     width: 100vw !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
-    position: relative !important;
+    position: absolute !important;
     overflow: hidden !important;
+    z-index: 0 !important;
   }
 
   .hero .hero-bg {
@@ -907,11 +912,71 @@ body .hero .hero-bg {
 }
 
 /* Animación para las imágenes de las tarjetas */
+
 .card-img-top {
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+@keyframes cardBounce {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  20% { transform: scale(1.08) rotate(-3deg); }
+  50% { transform: scale(0.98) rotate(2deg); }
+  80% { transform: scale(1.05) rotate(-2deg); }
+}
+
 .card:hover .card-img-top {
-  transform: scale(1.08) rotate(-3deg);
+  animation: cardBounce 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
   box-shadow: 0 8px 24px rgba(167, 33, 245, 0.2);
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-in-right {
+  animation: fadeInRight 2s ease;
+}
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-in-left {
+  animation: fadeInLeft 2s ease;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-Down {
+  animation: fadeInDown 3s ease;
 }
