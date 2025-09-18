@@ -107,7 +107,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: var(--navbar-height);
+    margin-top: 6vh;
   }
 
   .hero-picture {
@@ -138,7 +138,7 @@
 @media (max-width: 991.98px) {
   .hero {
     min-height: 40vh;
-    margin-top: var(--navbar-height);
+    margin-top: 6vh;
   }
   .hero-img {
     max-height: none;
@@ -203,7 +203,7 @@
   padding: 0;
 }
 
-h1,
+
 h2,
 h3,
 h4,
@@ -347,7 +347,7 @@ select {
 
 .navbar {
   transition: top 0.3s;
-  position: fixed;
+  position: relative;
   width: 100%;
   z-index: 1030;
 }
@@ -398,8 +398,6 @@ select {
   padding: 10px;
 
 }
-
-
 
 .benef-table {
   text-align: center;
@@ -587,9 +585,7 @@ form #enviar {
 
 /* PAGINA - LEGAL */
 
-.main {
 
-}
 
 section h1 {
   margin: 5rem 0 10rem 0;
@@ -643,7 +639,9 @@ section span {
   }
 
 }
-
+h1{
+  margin-top: 20vh !important;
+}
 @media screen and (min-width:576px) {
   .cwrapper {
     display: flex;
@@ -677,17 +675,16 @@ section span {
 }
 
 
-/* Hacer que el área de cards actúe como un container y las cards sean más anchas en pantallas grandes */
+
 .cards-content {
   width: 100%;
   box-sizing: border-box;
 }
 
-/* Desktop / large: centrar y limitar ancho del contenedor de tarjetas; las cards se vuelven horizontales y más anchas */
+
 @media (min-width: 992px) {
   .cards-content {
-    max-width: 1200px;    /* tamaño del "container" en pantallas grandes */
-    margin: 0 auto;       /* centrar */
+    max-width: 1200px;  
     padding-left: 1rem;
     padding-right: 1rem;
     display: grid;
@@ -701,7 +698,6 @@ section span {
     align-items: stretch;
   }
 
-  /* Forzar que las cards ocupen más ancho (sobrescribe w-50) */
   .cards-content .card {
     width: 100% !important;
     max-width: 100%;
@@ -726,19 +722,17 @@ section span {
     padding: 0;
   }
 
-  /* Fuerza grid y alineación superior en pantallas grandes para que las 2 cards queden lado a lado */
   .cards-content {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 1.5rem !important;
-    align-items: start; /* important: hace que ambas cards empiecen al mismo nivel */
+    align-items: start; 
     justify-items: stretch;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
   }
 
-  /* Cada .col dentro del grid actúa como grid-item sin padding extra de Bootstrap */
   .cards-content > .col {
     padding: 0 !important;
     margin: 0;
@@ -747,7 +741,7 @@ section span {
     width: 100%;
   }
 
-  /* Asegurar que la card use todo el ancho disponible dentro de la columna */
+
   .cards-content .card,
   .cards-content .w-50 {
     width: 100% !important;
@@ -756,7 +750,6 @@ section span {
   }
 }
 
-/* Medium screens: dejar cards más estrechas pero no tan verticales */
 @media (min-width: 500px) and (max-width: 991.98px) {
   .cards-content {
     max-width: 960px;
@@ -772,7 +765,7 @@ section span {
   .cards-content .card-body { width: 65%; }
 }
 
-/* Small screens: comportamiento apilado (como ahora) */
+
 @media (max-width: 499px) {
   .cards-content,
   .cards-content .col,
@@ -791,22 +784,19 @@ section span {
   .cards-content .card-body { width: 100%; }
 }
 
-/* Forzar separación superior de 15vh para la imagen principal */
+
 .hero-picture {
 
   padding-top: 0 !important;
 }
 
-/* Evitar márgenes contradictorios en la propia imagen */
+
 .hero-img {
   margin-top: 5vh !important;
 }
 
-/* límite máximo solo en el breakpoint más grande */
 @media (min-width: 500px) {
-  :root { --site-max-width: 1400px; } /* ajusta este valor a la "cantidad" que quieres */
-
-  /* opción A: aplicar al hero y al área de tarjetas (no cambia estructura HTML) */
+  :root { --site-max-width: 1400px; } 
   .hero,
   .cards-content,
   .container-fluid {
@@ -816,7 +806,7 @@ section span {
     margin-right: auto;
   }
 
-  /* asegurar que la imagen principal (mainpic) no se estire más allá del contenedor */
+
   .hero-img {
     max-width: calc(var(--site-max-width) * 0.8);
     width: 100%;
@@ -824,40 +814,39 @@ section span {
     object-fit: contain;
   }
 
-  /* Si quieres limitar TODO el layout, envuelve el body/ main en <div class="site-max"> y descomenta:
-  .site-max { max-width: var(--site-max-width); margin: 0 auto; width: 100%; }
-  */
+
+
 }
 
-/* Forzar repetición horizontal del fondo SOLO para el hero (más específico y con !important) */
+
 body .hero .hero-bg {
   background-image: url('../images/background.jpeg') !important;
   background-repeat: repeat-x !important;
-  background-size: auto 100% !important;    /* alto = 100% del hero, repetir en X */
+  background-size: auto 100% !important;  
   background-position: top left !important;
   background-attachment: scroll !important;
 }
 
-/* Asegurar que en pantallas muy grandes siga usando auto 100% (anula background-size: cover) */
+
 @media (min-width: 1200px) {
   body .hero .hero-bg {
     background-size: auto 100% !important;
   }
 }
 
-/* Fix: hacer .hero full-bleed para que el fondo repita hasta el borde del viewport */
+
 @media (min-width: 500px) {
   .hero {
     max-width: none !important;
     width: 100vw !important;
-    /* centrar correctamente el elemento full-bleed dentro de un contenedor centrado */
+
     margin-left: calc(50% - 50vw) !important;
     margin-right: calc(50% - 50vw) !important;
     left: 0;
     right: 0;
   }
 
-  /* asegurar que la capa de fondo ocupe todo el hero */
+
   .hero .hero-bg {
     left: 0;
     right: 0;
@@ -868,8 +857,7 @@ body .hero .hero-bg {
     background-position: top left !important;
   }
 }
-bounce
-/* Fix para pantallas muy anchas (4K): extender ligeramente la capa de fondo del hero para evitar seams */
+
 @media (min-width: 2560px) {
   .hero {
     max-width: none !important;
@@ -884,25 +872,24 @@ bounce
   .hero .hero-bg {
     position: absolute !important;
     top: 0;
-    left: -4px !important;                         /* pequeña sobreextensión para cubrir redondeo/scrollbar */
+    left: -4px !important;                      
     right: -4px !important;
     width: calc(100% + 8px) !important;
     height: 100% !important;
     background-repeat: repeat-x !important;
-    background-size: auto 100% !important;        /* altura = 100% del hero, repetir en X */
+    background-size: auto 100% !important;        
     background-position: top left !important;
     background-attachment: scroll !important;
     z-index: 0 !important;
     pointer-events: none;
   }
 
-  /* por seguridad, igualar el fondo del html/body al color predominante del patrón */
+
   html, body {
     background-color: #000 !important;
   }
 }
 
-/* ajuste extra para resoluciones aún mayores (por ejemplo 4K+ con redondeos mayores) */
 @media (min-width: 3840px) {
   .hero .hero-bg {
     left: -8px !important;
@@ -911,7 +898,7 @@ bounce
   }
 }
 
-/* Animación para las imágenes de las tarjetas */
+
 
 .card-img-top {
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);

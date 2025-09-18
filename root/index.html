@@ -9,14 +9,11 @@
     integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
   <link rel="stylesheet" href="CSS/styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-</head>
-
-<body class="main" style="background-color: #a721f52c;">
-  <!-- esto es la barra de navegacion-->
-  <nav class="navbar sticky-top navbar-expand-lg" style="position: fixed; background-color: #ffffff;">
+<!-- esto es la barra de navegacion-->
+ <nav class="navbar sticky-top navbar-expand-lg" style="position: fixed; background-color: #ffffff;">
     <div class="container-fluid">
       <a class="navbar-brand" href="index.html">
-        <img src="images/logotipo banco.png" alt="Logo" width="80" height="80" class="d-inline-block align-text-top">
+        <img src="images/logo.png" alt="Logo" width="80" height="40" class="d-inline-block align-text-top">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,10 +22,12 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
 
-          <a class="nav-link" href="#quienes-somos">¿Quiénes somos?</a>
-          <a class="nav-link" href="#tarjetas">Tarjetas</a>
-          <a class="nav-link" href="#beneficios">Beneficios</a>
-          <a class="btn btn-nav nav-link" id="nav-btn" href="#solicitar-tarjeta">Solicitar tarjeta</a>
+          <a class="nav-link" href="index.html#quienes-somos">¿Quiénes somos?</a>
+          <a class="nav-link" href="index.html#tarjetas">Tarjetas</a>
+          <a class="nav-link" href="index.html#beneficios">Beneficios</a>
+          <a class="nav-link" href="ayuda.html">Ayuda</a>
+          <a class="nav-link" href="legal.html">Legal</a>
+          <a class="btn btn-nav nav-link" id="nav-btn" href="index.html#solicitar-tarjeta">Solicitar tarjeta</a>
 
 </a>
 
@@ -37,9 +36,14 @@
 
     </div>
   </nav>
+</head>
+
+<body class="main" style="background-color: #a721f52c;">
+  
+  
   <!-- imagen responsiva -->
-  <!-- esto es el carrousel principal-->
-  <main>
+
+  
     <!-- hero con imagen principal sobre fondo -->
     <section class="hero">
       <div class="hero-bg" aria-hidden="true"></div>
@@ -48,13 +52,14 @@
         <!-- pantalla pequeña -->
         <source media="(max-width: 499px)" srcset="images/mainpicsmall.png">
         <!-- pantalla mediana/desktop -->
-        <source media="(min-width: 500px)" srcset="images/mainpic.png">
+        <source media="(min-width: 500px)" srcset="images/Mainpic.png">
         <!-- fallback -->
         <img src="images/mainpic.png" alt="Imagen principal" class="hero-img">
       </picture>
     </section>
     <!-- fin hero -->
     <!-- esto es el contenedor del cuerpo -->
+  <main>
     <div>
 
       <div class="container mt-5">
@@ -82,7 +87,7 @@
 
           <!-- Columna de imagen -->
           <div class="col-md-6 d-flex justify-content-center align-items-center">
-            <img src="images/contact1.jpg" class="bounce" alt=""
+            <img src="images/contact1.jpg" class="animar-al-entrarR" alt=""
               style="padding: 15px; width: 70%; display: block; border-radius: 8px; background-color:#D9D9D9;">
           </div>
         </div>
@@ -97,7 +102,7 @@
       <h1 class="text-center compare-card mb-5">Tarjetas</h1>
     </div>
     <div class="row row-cols-1  cards-content">
-      <div class="col" style="place-items: center;">
+      <div class="col; animar-al-entrarL" style="place-items: center;">
         <div class="card h-100 p-4 w-50">
           <img src="images/astro-one-2.png" class="card-img-top" alt="...">
           <div class="card-body">
@@ -110,7 +115,7 @@
           </div>
         </div>
       </div>
-      <div class="col" style="place-items: center;">
+      <div class="col; animar-al-entrarR" style="place-items: center;">
         <div class="card h-100 p-4 w-50">
           <img src="images/Astro-black-2.png" class="card-img-top" alt="...">
           <div class="card-body">
@@ -126,7 +131,7 @@
     </div>
     <!-- esto son las tablas-->
 
-    <div id="beneficios" class="container mt-5" style="padding-bottom: 5vh;">
+    <div id="beneficios" class="container mt-5, animar-al-entrarD" style="padding-bottom: 5vh;">
 
       <h1 class="text-center mb-4 benef-table">Beneficios</h1>
       <table class="tabla-comparativa">
@@ -179,7 +184,7 @@
    <div style="background-color: #ffffff; padding-bottom: 5vh; padding-top: 1vh;">
 
       <!--esto es el formulario-->
-      <div id="solicitar-tarjeta" class="container mt-5">
+      <div id="solicitar-tarjeta" class="container mt-5; animar-al-entrarR" style="padding-bottom: 5vh;">
         <h1 class="text-center card-form">Solicita tu tarjeta</h1>
         <form>
           <div class="mb-3">
@@ -202,7 +207,7 @@
     </div>
     </div>
     <div class="container mt-5">
-      <div class="row">
+      <div class="row; animar-al-entrarL">
         <div class="col-md-6 p-4">
           <h1>Disfruta de los beneficios desde el primer día</h1>
         </div>
@@ -214,7 +219,7 @@
     </div>
 
     <!-- Sección de mapa de ubicación de oficinas centrales -->
-    <div class="container mt-5 mb-5">
+    <div class="container mt-5 mb-5; animar-al-entrarD">
       <h1 class="text-center mb-4">Ubicación de nuestras oficinas centrales</h1>
       <div class="row justify-content-center">
         <div class="col-md-10">
@@ -413,6 +418,42 @@
     input.value = '';
     messages.scrollTop = messages.scrollHeight;
   };
+  const observerright = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('fade-in-right');
+      observerright.unobserve(entry.target); // Solo una vez
+    }
+  });
+});
+
+document.querySelectorAll('.animar-al-entrarR').forEach(el => {
+  observerright.observe(el);
+});
+  const observerleft = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('fade-in-left');
+      observerleft.unobserve(entry.target); // Solo una vez
+    }
+  });
+});
+
+document.querySelectorAll('.animar-al-entrarL').forEach(el => {
+  observerleft.observe(el);
+});
+  const observerDown = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('fade-in-Down');
+      observerDown.unobserve(entry.target); // Solo una vez
+    }
+  });
+});
+
+document.querySelectorAll('.animar-al-entrarD').forEach(el => {
+  observerDown.observe(el);
+});
 </script>
 </body>
 
