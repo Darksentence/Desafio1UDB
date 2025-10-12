@@ -18,9 +18,14 @@
                     <li><a href="destinos.html">DESTINOS</a></li>
                     <li><a href="deals.html">DEALS</a></li>
                     <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="contacto.html" class="contact-btn mobil-vr">CONTACTO</a>
+</li>
                 </ul>
 
-                <a href="contacto.html" class="contact-btn">CONTACTO</a>
+                <a href="contacto.html" class="contact-btn solo-desktop">CONTACTO</a>
+            
+                <div class="menu-toggle">☰</div> 
+
             </nav>
         </div>
     </header>
@@ -33,5 +38,15 @@
             </div>
         </div>
     </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+
+            menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            });
+        });
+</script>
 </body>
 </html>

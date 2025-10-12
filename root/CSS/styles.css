@@ -97,6 +97,90 @@ select {
   padding: 5px 2.5em;
 }
 
+.menu-toggle, a.mobil-vr {
+  display: none;
+}
+
+@media (max-width: 1200px){
+  .navbar {
+    padding: 15px 0;
+  }
+
+  .nav-links {
+    gap: 10px;
+    padding: 0 15px;
+  }
+
+  .nav-links li a, .nav-items a {
+    font-size: 0.7em;
+    padding: 0 8px;
+  }
+
+  .nav-items .logo, .nav-items .contact-btn {
+    font-size: 0.7em;
+  }
+
+  .nav-items .contact-btn {
+    padding: 4px 2em;
+}
+  
+}
+
+@media (max-width: 767px) {
+  .menu-toggle {
+    display: block;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: var(--rosa-pastel);
+    order: 3;
+  }
+
+  .solo-desktop {
+    display: none;
+  }
+
+  .nav-items {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  .nav-links {
+    display: block;
+    flex-direction: column;
+    position: absolute;
+    top:100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--azul-gris);
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.4s ease;
+  }
+
+  .nav-links.active {
+    max-height: 500px;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links li a {
+    display: block;
+    padding: 15px 0;
+
+  }
+
+  a.mobil-vr {
+    display: inline-block;
+    margin: 10px auto;
+    padding: 8px 3em;
+
+  }
+
+}
+
 /*** HERO SECTION (ESTILOS GENERALES - TODAS LAS PAGINAS)***/
 
 .hero {
@@ -120,6 +204,26 @@ select {
   font-size: 5rem;
   line-height: 1.1;
   font-weight: 600;
+}
+
+@media (max-width: 1200px) {
+  .hero .titulo {
+    font-size: 3rem;
+  }
+
+  .hero .subtitulo {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero .titulo {
+    font-size: 1.8rem;
+  }
+
+  .hero .subtitulo {
+    font-size: 0.8rem;
+  }
 }
 
 /*** FOOTER - TODAS LA PÁGINAS ***/
@@ -204,6 +308,12 @@ footer {
   font-size: 1.6rem;
   font-weight: bold;
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 767px) {
+  .dest-name {
+    font-size: 1rem;
+  }
 }
 
 
