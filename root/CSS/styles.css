@@ -122,6 +122,15 @@ select {
   font-weight: 600;
 }
 
+/*** FOOTER - TODAS LA PÁGINAS ***/
+footer {
+  margin-top: 8rem;
+  height: 60px;
+  background-color: var(--rosa-oscuro);
+  text-align: center;
+  align-content: center;
+}
+
 /*** INDEX ***/
 
 .new-travel {
@@ -144,9 +153,59 @@ select {
 
 /*****DESTINOS******/
 
+.dest-contenido {
+  max-width: 80%;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
 .dest {
   background-image: url('/root/Images/grecia.jpg');
 }
+
+.dest-contenido-txt {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.dest-contenido-txt h1 {
+  color: var(--azul-gris)
+}
+
+.dest-contenido-txt .tagline{
+  font-weight:600;
+}
+
+.dest-galeria {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.dest-img {
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.dest-name {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: var(--rosa-pastel);
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
 
 /*****DEALS******/
 
