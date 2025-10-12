@@ -19,7 +19,7 @@
                     <li><a href="deals.html">DEALS</a></li>
                     <li><a href="about.html">ABOUT</a></li>
                     <li><a href="contacto.html" class="contact-btn mobil-vr">CONTACTO</a>
-</li>
+                    </li>
                 </ul>
 
                 <a href="contacto.html" class="contact-btn solo-desktop">CONTACTO</a>
@@ -37,7 +37,43 @@
                 <h1 class="titulo">RESOLVEMOS<br>TODAS TUS DUDAS</h1>
             </div>
         </div>
+        <div class="form-container">
+            <h2>Contáctanos</h2>
+            <form action="#" method="post">
+                <div class="div-nombre-com">
+                    <div class="div-nombre"> 
+                        <label for="nombre">Nombre: *</label>
+                        <input type="text" id="nombre" name="nombre">
+                    </div>
+
+                    <div class="div-apellido">
+                        <label for="apellido">Apellidos: *</label>
+                        <input type="text" id="apellido" name="apellido">
+                    </div>
+                </div>
+
+                <div class="div-tel">
+                    <label for="telefono">Número de teléfono: *</label>
+                    <input type="tel" id="telefono" name="telefono">
+                </div>
+
+                <div class="div-correo">
+                    <label for="correo">Correo electrónico: *</label>
+                    <input type="email" id="correo" name="correo">
+                </div>
+
+                <div class="div-asunto">
+                    <label for="asunto">Asunto: *</label>
+                    <input type="text" id="asunto" name="asunto">
+                </div>
+
+                <button type="submit" class="sbm-btn">Enviar</button>
+            </form>
+        </div>
     </main>
+    <footer>
+        <p>All rights reserved New Travel © 2025</p>
+    </footer>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const menuToggle = document.querySelector('.menu-toggle');
