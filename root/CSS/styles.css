@@ -231,14 +231,6 @@ select {
   }
 }
 
-/*** FOOTER - TODAS LA PÁGINAS ***/
-footer {
-  margin-top: 8rem;
-  height: 60px;
-  background-color: var(--rosa-oscuro);
-  text-align: center;
-  align-content: center;
-}
 
 /*** INDEX ***/
 
@@ -558,6 +550,63 @@ input {
   .gallery-caption { font-size: 0.9rem; padding: 6px 10px; }
 }
 
+/* Píldora amarilla para el buscador */
+.pill-yellow {
+  background: #FFD730;
+  color: #000;
+  border: none;
+  padding: 0.35rem 1rem; /* slightly less vertical padding for tighter alignment */
+  border-radius: 999px;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  font-weight: 600;
+  text-decoration: none;
+}
+.pill-yellow input[type="search"] {
+  background: transparent;
+  color: #000;
+  border: 0;
+  outline: none;
+  /* Make the input fill the pill height so text is vertically centered */
+  height: 100%;
+  padding: 0 0.6rem; /* horizontal padding inside the pill */
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 1.05rem; /* slightly larger to match button */
+  line-height: 1;
+  transform: translateY(-2px); /* nudge upward to align with button text */
+  /* Wider default width on desktop */
+  width: 220px;
+  max-width: 45vw;
+  transition: width 220ms cubic-bezier(.2,.9,.2,1), transform 140ms ease;
+}
+
+@media (max-width: 767px) {
+  .pill-yellow input[type="search"] {
+    width: 140px; /* reduce on small screens */
+    transform: translateY(-1px);
+    font-size: 0.95rem;
+  }
+}
+
+/* Expand the search input on hover or when focused to give space for typing */
+.pill-yellow:hover input[type="search"],
+.pill-yellow:focus-within input[type="search"] {
+  width: 320px;
+  max-width: 70vw;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 767px) {
+  .pill-yellow:hover input[type="search"],
+  .pill-yellow:focus-within input[type="search"] {
+    width: 220px;
+    max-width: 80vw;
+    transform: translateY(-1px);
+  }
+}
+
 .gallery-title {
     background: linear-gradient(45deg, #ff6b6b, #ff8e53);
     padding: 40px 0;
@@ -603,6 +652,7 @@ input {
     font-weight: 700;
     margin-bottom: 20px;
     background: linear-gradient(45deg, #3498db, #2ecc71);
+  background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
