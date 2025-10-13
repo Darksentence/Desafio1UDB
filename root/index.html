@@ -17,23 +17,30 @@
 </head>
 
 <body>
-  <header class="navbar">
-        <div class="nav-container">
-            <nav class="nav-items">
-                <a href="index.html" class="logo">NEW TRAVEL</a>
+<div class="hamburger-menu" id="hamburger-menu">
+  <div class="menu-bar1"></div>
+  <div class="menu-bar2"></div>
+  <div class="menu-bar3"></div>
+</div>
 
-                <ul class="nav-links">
-                    <li><a href="calendario.html">CALENDARIO</a></li>
-                    <li><a href="experiencias.html">EXPERIENCIAS</a></li>
-                    <li><a href="destinos.html">DESTINOS</a></li>
-                    <li><a href="deals.html">DEALS</a></li>
-                    <li><a href="about.html">ABOUT</a></li>
-                </ul>
+<!-- Overlay navigation (used by js/navbar.js) -->
+<div id="overlay" class="overlay overlay-slide-left">
+  <nav>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="calendario.html">Calendario</a></li>
+      <li><a href="experiencias.html">Experiencias</a></li>
+      <li><a href="destinos.html">Destinos</a></li>
+      <li><a href="deals.html">Deals</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+</div>
 
-                <a href="contacto.html" class="contact-btn">CONTACTO</a>
-            </nav>
-        </div>
-    </header>
+<!-- Logo fixed (kept) -->
+<p class="logo">Cosmos travel</p>
+
   <main>
   <div
     class="parallax"
@@ -55,20 +62,18 @@
       <span class="text-uppercase text-whitefw-bold"
         >Cosmos travel</span>
       <h1 class="mb-4 mt-2 fw-bold">Una nueva forma de viajar</h1>
-      <div class="d-flex justify-content-center flex-wrap gap-2">
+  <div class="d-flex justify-content-center align-items-center flex-wrap gap-2">
         <form action="#produk" role="search" onsubmit="return false;" class="pill-yellow d-flex align-items-center" style="height: calc(2em + 1rem);">
           <input type="search" name="q" placeholder="Buscar..." aria-label="Buscar" class="border-0 bg-transparent text-black" style="outline: none;">
         </form>
-        <a href="#contact" class="btn btn-outline-warning btn-lg rounded-pill px-5 pt-2">
+  <a href="#contact" class="btn btn-outline-warning btn-lg rounded-pill px-5 py-2">
         Buscar Destinos
         </a>
       </div>
     </div>
   </div>
 
-  <section class="100vh" style="min-height: 5vh"></section>
-  <h1 class="mb-4 mt-2 fw-bold spotlight-title" style="color: #858383">Spotlight del mes</h1>
-  <section class="100vh" style="min-height: 5vh"></section>
+  <h1 class="mb-4 mt-2 fw-bold spotlight-title" style="background-color:white; color: #858383">Spotlight del mes</h1>
   <div class="container panels">
       <div class="panel active" style="background-image: url('https://images.unsplash.com/photo-1558979158-65a1eaa08691?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')">
         <h3>Explore The World</h3>
@@ -87,9 +92,8 @@
       </div>
 
     </div>
-      <section class="100vh" style="min-height: 5vh"></section>
-      <h1 class="mb-4 mt-2 fw-bold spotlight-title" style="color: #858383">Galería de destinos</h1>
-  <section class="100vh" style="min-height: 5vh"></section>
+      <h1 class="mb-4 mt-2 fw-bold spotlight-title" style="color: #858383; background-color: white;">Galería de destinos</h1>
+
     <div class="container">
     <div class="row">
 
@@ -178,6 +182,6 @@
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/parallaxx-js/dist/parallax.js"></script>
   <script src="js/panel.js"></script>
-
+<script src="js/navbar.js"></script>
 </body>
 </html>

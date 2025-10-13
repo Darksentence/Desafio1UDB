@@ -7,28 +7,28 @@
     <link rel="stylesheet" href="CSS/styles.css">
 </head>
 <body>
-    <header class="navbar">
-        <div class="nav-container">
-            <nav class="nav-items">
-                <a href="index.html" class="logo">NEW TRAVEL</a>
+<!-- Shared navbar (hamburger + overlay) -->
+<div class="hamburger-menu" id="hamburger-menu">
+    <div class="menu-bar1"></div>
+    <div class="menu-bar2"></div>
+    <div class="menu-bar3"></div>
+</div>
 
-                <ul class="nav-links">
-                    <li><a href="calendario.html">CALENDARIO</a></li>
-                    <li><a href="experiencias.html">EXPERIENCIAS</a></li>
-                    <li><a href="destinos.html">DESTINOS</a></li>
-                    <li><a href="deals.html">DEALS</a></li>
-                    <li><a href="about.html">ABOUT</a></li>
-                    <li><a href="contacto.html" class="contact-btn mobil-vr">CONTACTO</a>
-</li>
-                </ul>
+<div id="overlay" class="overlay overlay-slide-left">
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="calendario.html">Calendario</a></li>
+                <li><a href="experiencias.html">Experiencias</a></li>
+                <li><a href="destinos.html">Destinos</a></li>
+                <li><a href="deals.html">Deals</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+</div>
 
-                <a href="contacto.html" class="contact-btn solo-desktop">CONTACTO</a>
-            
-                <div class="menu-toggle">☰</div> 
-
-            </nav>
-        </div>
-    </header>
+<p class="logo">NEW TRAVEL</p>
 
     <main>
         <div class="calen hero">
@@ -37,16 +37,49 @@
                 <h1 class="titulo">PLANEA TU VIAJE <br>PERFECTO</h1>
             </div>
         </div>
-    </main>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const menuToggle = document.querySelector('.menu-toggle');
-            const navLinks = document.querySelector('.nav-links');
+        </main>
+    <footer class="footer">
+    <div class="container">
+        <div class="row align-items-start">
+            <div class="col-lg-4 footer-section">
+                <div class="footer-logo">Visítanos</div>
+                <p class="footer-about">Encuéntranos en nuestra oficina o síguenos en redes.</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
 
-            menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            });
-        });
-    </script>
+            <div class="col-lg-4 footer-section">
+                <h5>Ubicación</h5>
+                <div class="footer-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1627.9934186087344!2d-89.71177898263399!3d13.956062473198967!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f62950005c33ce9%3A0x510b4d68709a540b!2sPeor%20es%20nada!5e0!3m2!1ses-419!2sus!4v1760313449784!5m2!1ses-419!2sus" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+            <div class="col-lg-4 footer-section">
+                <h5>Support</h5>
+                <ul class="footer-links">
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Contact Support</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <ul class="footer-bottom-links">
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Cookie Policy</a></li>
+            </ul>
+            <p>© 2025 NEW TRAVEL. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+<script src="js/navbar.js"></script>
 </body>
 </html>
