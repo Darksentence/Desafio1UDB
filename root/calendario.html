@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calendario</title>
+    <title>CALENDARIO</title>
     <link rel="stylesheet" href="CSS/styles.css">
 </head>
 <body>
@@ -34,10 +34,85 @@
         <div class="calen hero">
             <div class="hero-content">
                 <p class="subtitulo">Calendario</p>
-                <h1 class="titulo">PLANEA TU VIAJE <br>PERFECTO</h1>
+                <h1 class="titulo">PLANEA TU VIAJE <br>PERFECTO CON NOSOTROS</h1>
             </div>
         </div>
+        <section class="calendar-section">
+            <div class="calendar-container">
+                <div class="calendar-header">
+                    <button id="prevMonth" class="cal-btn">◀</button>
+                    <h2 id="monthYear">Mes Año</h2>
+
+                    <button id="nextMonth" class="cal-btn">▶</button>
+                </div>
+                <div class="calendar-grid">
+                    <div class="calendar-day">Dom</div>
+                    <div class="calendar-day">Lun</div>
+                    <div class="calendar-day">Mar</div>
+                    <div class="calendar-day">Mié</div>
+                    <div class="calendar-day">Jue</div>
+                    <div class="calendar-day">Vie</div>
+                    <div class="calendar-day">Sáb</div>
+                </div>
+                <div class="legend">
+                    <span class="legend-available"></span> Disponible
+                    <span class="legend-booked"></span> Reservado
+                    <span class="legend-unavailable"></span> No laboral
+                </div>
+            </div>
+        </section>
     </main>
+
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Reservar el mejor tour</h3>
+            <form id="bookingForm">
+                <label>Esta es la fecha de tu proximo viaje</label>
+                <input type="text" id="selectedDate" name="date" readonly>
+
+                <label>Adonde vamos hoy</label>
+                <select id="destination" name="destination" required>
+                    <option value="París">París</option>
+                    <option value="Roma">Roma</option>
+                    <option value="Tokio">Tokio</option>
+                    <option value="Grecia">Grecia</option>
+                    <option value="Perú">Perú</option>
+                    <option value="Suecia">Suecia</option>
+                    <option value="Argentina">Argentina</option>
+                    <option value="Brasil">Brasil</option>
+                    <option value="Porcelana">Porcelana</option>
+                    <option value="Colombia">Colombia</option>
+                    <option value="Corea del sur">Corea del sur</option>
+                    <option value="Madagascar">Madagascar</option>
+                </select>
+
+                <label>Nombre completo</label>
+                <input type="text" id="name" name="name" required>
+                <label>Correo electrónico</label>
+                <input type="email" id="email" name="email" required>
+                <div class="people-row">
+                 <div>
+                        <label>Adultos</label>
+                        <input type="number" id="adults" name="adults" min="0" value="2" required>
+                </div>
+                <div>
+                        <label>Niños mayores de 8 años</label>
+                        <input type="number" id="children8" name="children8" min="0" value="0" required>
+                </div>
+                <div>
+                        <label>Niños menores de 8 años</label>
+                        <input type="number" id="childrenUnder8" name="childrenUnder8" min="0" value="0" required>
+                 </div>
+                </div>
+
+                <label><input type="checkbox" id="includeHotel" name="includeHotel"> Incluir hotel todo incluido</label>
+
+                <button type="submit" class="sbm-btn">Enviar reserva</button>
+            </form>
+        </div>
+    </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const menuToggle = document.querySelector('.menu-toggle');
@@ -47,6 +122,156 @@
             navLinks.classList.toggle('active');
             });
         });
+
+        (function(){
+            const calendarGrid = document.querySelector('.calendar-grid');
+            const monthYear = document.getElementById('monthYear');
+            const prevBtn = document.getElementById('prevMonth');
+            const nextBtn = document.getElementById('nextMonth');
+            const modal = document.getElementById('bookingModal');
+            const closeBtn = modal.querySelector('.close');
+            const selectedDateInput = document.getElementById('selectedDate');
+
+            let today = new Date();
+            let viewDate = new Date(today.getFullYear(), today.getMonth(), 1);
+
+       
+            const available = new Set([
+                // Asumimos algunas fechas como ejemplo
+                new Date().toISOString().slice(0,10),
+                new Date(today.getFullYear(), today.getMonth(), today.getDate()+2).toISOString().slice(0,10),
+                new Date(today.getFullYear(), today.getMonth(), today.getDate()+5).toISOString().slice(0,10)
+            ]);
+
+            function render(){
+                // limpiar celdas anteriores (mantener los 7 encabezados)
+                calendarGrid.querySelectorAll('.date-cell')?.forEach(n=>n.remove());
+
+                const year = viewDate.getFullYear();
+                const month = viewDate.getMonth();
+                monthYear.textContent = viewDate.toLocaleString('es-ES',{month:'long', year:'numeric'});
+
+                const firstDay = new Date(year, month, 1).getDay();
+                const daysInMonth = new Date(year, month+1, 0).getDate();
+
+                // añadir celdas vacías
+                for(let i=0;i<firstDay;i++){
+                    const empty = document.createElement('div');
+                    empty.className = 'date-cell empty';
+                    calendarGrid.appendChild(empty);
+                }
+
+                for(let d=1; d<=daysInMonth; d++){
+                    const cell = document.createElement('button');
+                    cell.className = 'date-cell';
+                    cell.type = 'button';
+                    const iso = new Date(year, month, d).toISOString().slice(0,10);
+                    cell.dataset.date = iso;
+                    cell.textContent = d;
+
+                    if(available.has(iso)){
+                        cell.classList.add('available');
+                    } else {
+                        cell.classList.add('booked');
+                        cell.disabled = true;
+                    }
+
+                    cell.addEventListener('click', ()=>{
+                        selectedDateInput.value = iso;
+                        modal.style.display = 'block';
+                    });
+
+                    calendarGrid.appendChild(cell);
+                }
+            }
+
+            prevBtn.addEventListener('click', ()=>{
+                viewDate = new Date(viewDate.getFullYear(), viewDate.getMonth()-1, 1);
+                render();
+            });
+
+            nextBtn.addEventListener('click', ()=>{
+                viewDate = new Date(viewDate.getFullYear(), viewDate.getMonth()+1, 1);
+                render();
+            });
+
+            closeBtn.addEventListener('click', ()=> modal.style.display = 'none');
+            window.addEventListener('click', e=>{ if(e.target === modal) modal.style.display = 'none'; });
+
+                        // Envío del formulario: generar factura/orden dentro del modal
+                        document.getElementById('bookingForm').addEventListener('submit', function(e){
+                                e.preventDefault();
+                                const form = this;
+                                const dest = form.destination.value;
+                                const date = form.date.value; // ISO YYYY-MM-DD
+                                const name = form.name.value;
+                                const email = form.email.value;
+                                const adults = Number(form.adults.value) || 0;
+                                const children = Number(form.children.value) || 0;
+                                const people = adults + children;
+                                const includeHotel = form.includeHotel.checked;
+
+                              
+                                const prices = { 'París':{adult:80, child:50}, 'Roma':{adult:100, child:70}, 'Tokio':{adult:200, child:140}, 'Grecia':{adult:150, child:100} };
+                                const hotelPerPerson = 50; // coste extra por persona si incluye hotel
+
+                                const priceInfo = prices[dest] || {adult:85, child:40};
+                                const subtotal = priceInfo.adult * adults + priceInfo.child * children;
+                                const hotelCost = includeHotel ? hotelPerPerson * people : 0;
+                                const total = subtotal + hotelCost;
+
+                                const orderId = 'ORD-' + Date.now().toString().slice(-8);
+
+                                
+                                let displayDate = date;
+                                try{
+                                        const d = new Date(date + 'T00:00:00');
+                                        displayDate = d.toLocaleDateString('es-ES', {year:'numeric', month:'long', day:'numeric'});
+                                }catch(err){ /* mantener iso si falla */ }
+
+                                
+                                const invoiceHtml = `
+                                        <span class="close">&times;</span>
+                                        <div class="invoice">
+                                            <h3>Factura / Orden</h3>
+                                            <p><strong>Orden:</strong> ${orderId}</p>
+                                            <p><strong>Fecha de reserva:</strong> ${displayDate}</p>
+                                            <p><strong>Destino:</strong> ${dest}</p>
+                                            <p><strong>Cliente:</strong> ${name} &lt;${email}&gt;</p>
+                                                                    <table class="invoice-table">
+                                                                        <tr><td>Adultos</td><td>${adults}</td></tr>
+                                                                        <tr><td>Niños</td><td>${children}</td></tr>
+                                                                        <tr><td>Precio por adulto</td><td>$${priceInfo.adult.toFixed(2)}</td></tr>
+                                                                        <tr><td>Precio por niño</td><td>$${priceInfo.child.toFixed(2)}</td></tr>
+                                                                        <tr><td>Subtotal</td><td>$${subtotal.toFixed(2)}</td></tr>
+                                                                        <tr><td>Incluye hotel</td><td>${includeHotel ? 'Sí' : 'No'}</td></tr>
+                                                                        <tr class="total-row"><td>Total</td><td>$${total.toFixed(2)}</td></tr>
+                                                                    </table>
+                                            <div class="invoice-actions">
+                                                <button id="printInvoice" class="sbm-btn">Imprimir / Descargar</button>
+                                                <button id="closeInvoice" class="sbm-btn">Cerrar</button>
+                                            </div>
+                                            <p class="small">Esta es una confirmación automática de la reserva. Esto es una demostración.</p>
+                                        </div>
+                                `;
+
+                                const content = modal.querySelector('.modal-content');
+                                content.innerHTML = invoiceHtml;
+
+                                // Re-attach eventos para cerrar e imprimir
+                                content.querySelector('.close').addEventListener('click', ()=> modal.style.display = 'none');
+                                content.querySelector('#closeInvoice').addEventListener('click', ()=> modal.style.display = 'none');
+                                content.querySelector('#printInvoice').addEventListener('click', ()=> {
+                                        // Abrir diálogo de impresión para guardar como PDF
+                                        window.print();
+                                });
+
+                                // Resetear formulario original (en caso de reabrir)
+                                form.reset();
+                        });
+
+            render();
+        })();
     </script>
 </body>
 </html>

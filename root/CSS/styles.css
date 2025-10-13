@@ -245,6 +245,49 @@ footer {
 
 
 /*****CALENDARIO******/
+.hero {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  color: var(--casi-blanco);
+  text-shadow: 2px 2px 6px var(--azul-gris-oscuro);
+}
+
+.hero .subtitulo {
+  font-size: 1.5rem;
+}
+
+.hero .titulo {
+  font-size: 5rem;
+  line-height: 1.1;
+  font-weight: 600;
+}
+
+@media (max-width: 1200px) {
+  .hero .titulo {
+    font-size: 3rem;
+  }
+
+  .hero .subtitulo {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero .titulo {
+    font-size: 1.8rem;
+  }
+
+  .hero .subtitulo {
+    font-size: 0.8rem;
+  }
+}
 
 .calen {
   background-image: url('/root/Images/paris2.jpg');
@@ -418,6 +461,96 @@ footer {
   margin: auto;
   padding-top: 3rem;
 }
+
+/* Estilos del calendario */
+.calendar-section {
+  max-width: 80%;
+  margin: 3rem auto 6rem;
+}
+.calendar-container {
+  background: rgba(128, 150, 225, 0.95);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 6px 20px rgba(24, 168, 106, 0.15);
+}
+.calendar-header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  margin-bottom: 12px;
+}
+.cal-btn {
+  background: var(--rosa-oscuro);
+  color: var(--azul-gris-oscuro);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.calendar-grid{
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+.calendar-day{
+  font-weight:600;
+  color: var(--azul-gris-oscuro);
+  text-align:center;
+  padding:6px 0;
+}
+.date-cell{
+  min-height:56px;
+  border-radius:8px;
+  border: 1px solid rgba(101, 4, 4, 0.06);
+  background: linear-gradient(180deg, var(--casi-blanco), #09bbdb);
+  color: var(--azul-gris-oscuro);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+}
+.date-cell.empty{ background: transparent; border: none; cursor: default; }
+.date-cell.available{ box-shadow: 0 2px 8px rgba(13, 190, 161, 0.03); border: 1px solid #cfeadf; }
+.date-cell.booked{ background: linear-gradient(180deg,#f5f5f5,#fff); color: #b0b0b0; }
+.date-cell:disabled{ opacity: 0.6; cursor: not-allowed; }
+.legend{ margin-top:12px; color:var(--azul-gris-oscuro); display:flex; gap:14px; align-items:center;}
+.legend-available, .legend-booked{ display:inline-block; width:14px; height:14px; border-radius:3px; margin-right:6px;}
+.legend-available{ background: #dff7ea; border:1px solid #b7e6cb; }
+.legend-booked{ background: #eee; border:1px solid #ddd; }
+
+/* Modal */
+.modal{ display:none; position:fixed; z-index:1000; left:0; top:0; width:100%; height:100%; overflow:auto; background: rgba(0,0,0,0.45); }
+.modal-content{ background: #fff; margin: 6% auto; padding: 20px; border-radius: 10px; width: 90%; max-width:420px; box-shadow: 0 8px 30px rgba(0,0,0,0.2); }
+.modal .close{ float:right; font-size:24px; cursor:pointer; color:var(--azul-gris-oscuro); }
+.modal-content h3{ color:var(--azul-gris-oscuro); margin-bottom:10px; }
+.modal-content label{ display:block; margin-top:10px; color:var(--azul-gris-oscuro); }
+.modal-content input{ width:100%; padding:8px; margin-top:6px; border:1px solid #ddd; border-radius:6px; }
+
+.people-row{ display:flex; gap:12px; }
+.people-row div{ flex:1; }
+
+@media (max-width:767px){
+  .people-row{ flex-direction:column; }
+}
+
+/* Estilos de factura dentro del modal */
+.invoice{ color:var(--azul-gris-oscuro); }
+.invoice h3{ margin-top:0; }
+.invoice-table{ width:100%; border-collapse:collapse; margin-top:10px; }
+.invoice-table td{ padding:8px 6px; border-bottom:1px solid #eee; }
+.invoice-table .total-row td{ font-weight:700; color:var(--azul-gris-oscuro); }
+.invoice-actions{ display:flex; gap:10px; margin-top:12px; }
+.invoice .small{ font-size:0.85rem; color:#666; margin-top:10px; }
+
+/* Mejoras de impresión: ocultar fondo y mostrar sólo la factura */
+@media print{
+  body *{ visibility:hidden; }
+  .modal, .modal *{ visibility:visible; }
+  .modal{ position:static; background:transparent; }
+  .modal-content{ box-shadow:none; border-radius:0; width:100%; margin:0; }
+}
+
 
 form {
   display: flex;
