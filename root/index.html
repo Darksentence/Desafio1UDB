@@ -39,10 +39,10 @@
 </div>
 
 <!-- Logo fixed (kept) -->
-<p class="logo">Cosmos travel</p>
+<p class="logo" style="color: white;">Cosmos travel</p>
 
   <main>
-  <div
+  <div id="hero-1"
     class="parallax"
     data-speed="0.5"
     data-image="Images/rome.jpg">
@@ -64,16 +64,116 @@
       <h1 class="mb-4 mt-2 fw-bold">Una nueva forma de viajar</h1>
   <div class="d-flex justify-content-center align-items-center flex-wrap gap-2">
         <form action="#produk" role="search" onsubmit="return false;" class="pill-yellow d-flex align-items-center" style="height: calc(2em + 1rem);">
-          <input type="search" name="q" placeholder="Buscar..." aria-label="Buscar" class="border-0 bg-transparent text-black" style="outline: none;">
+          <input type="search" name="q" placeholder="Adonde quieres ir..." aria-label="Buscar" class="border-0 bg-transparent text-black" style="outline: none;">
         </form>
+  <a href="#contact" class="btn btn-outline-warning btn-lg rounded-pill px-5 py-2">
+        Buscar Viajes
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!--hero 2 --> 
+
+  <div
+    id="hero-2"
+    class="parallax"
+    data-speed="0"
+    data-image="Images/paris2.jpg">
+
+
+    <div
+      class="position-absolute"
+      style="
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+        
+      "
+    ></div>
+
+    <div class="text-center p-5 position-relative">
+      <span class="text-uppercase text-whitefw-bold"
+        >Cosmos travel</span>
+      <h1 class="mb-4 mt-2 fw-bold">Conoce nuevos destinos</h1>
+  <div class="d-flex justify-content-center align-items-center flex-wrap gap-2">
+        
   <a href="#contact" class="btn btn-outline-warning btn-lg rounded-pill px-5 py-2">
         Buscar Destinos
         </a>
       </div>
     </div>
   </div>
+  <div class="intro">
+  <div class="intro-container">
+    <h2>Descubre experiencias únicas en todo el mundo</h2>
+    <p>Explora más de 100 destinos con guías locales, itinerarios personalizados y ofertas exclusivas para tu próxima aventura.</p>
+  </div>
+</div>
 
-  <h1 class="mb-4 mt-2 fw-bold spotlight-title" style="background-color:white; color: #858383">Spotlight del mes</h1>
+  <h1 class="mb-4 mt-2 fw-bold spotlight-title" style="background-color:#e9e8e8; color: #858383">Spotlight del mes</h1>
+
+  <!-- Our Product Section -->
+<section class="container py-5 my-5" id="products">
+
+  <div class="row g-4">
+    <!-- Product Card 1 -->
+    <div class="col-md-6 col-lg-4">
+      <div class="card h-50">
+        <img src="https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg" class="card-img-top" alt="Produk 1">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">Produk A</h5>
+          <p class="card-text">Deskripsi singkat dari produk A yang menarik dan informatif.</p>
+          <p class="fw-bold text-primary">Rp50.000</p>
+          <div class="mt-auto d-flex justify-content-between">
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detailProdukA">
+              Lihat Detail
+            </button>
+            <a href="#" class="btn btn-success">Beli Sekarang</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Card 2 -->
+    <div class="col-md-6 col-lg-4">
+      <div class="card h-50">
+        <img src="https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg" class="card-img-top" alt="Produk 2">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">Produk B</h5>
+          <p class="card-text">Deskripsi singkat dari produk B yang informatif dan ringkas.</p>
+          <p class="fw-bold text-primary">Rp75.000</p>
+          <div class="mt-auto d-flex justify-content-between">
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detailProdukB">
+              Lihat Detail
+            </button>
+            <a href="#" class="btn btn-success">Beli Sekarang</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Card 3 -->
+    <div class="col-md-6 col-lg-4">
+      <div class="card h-50">
+        <img src="https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg" class="card-img-top" alt="Produk 3">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">Produk C</h5>
+          <p class="card-text">Deskripsi menarik dari produk C yang menjelaskan fitur utamanya.</p>
+          <p class="fw-bold text-primary">Rp100.000</p>
+          <div class="mt-auto d-flex justify-content-between">
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detailProdukC">
+              Lihat Detail
+            </button>
+            <a href="#" class="btn btn-success">Beli Sekarang</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
   <div class="container panels">
       <div class="panel active" style="background-image: url('https://images.unsplash.com/photo-1558979158-65a1eaa08691?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')">
         <h3>Explore The World</h3>
@@ -92,7 +192,10 @@
       </div>
 
     </div>
-      <h1 class="mb-4 mt-2 fw-bold spotlight-title" style="color: #858383; background-color: white;">Galería de destinos</h1>
+    
+  
+
+      <h1 class="mb-4 mt-2 fw-bold spotlight-title" style="color: #858383; background-color: #e9e8e8;">Destinos Mas visitados</h1>
 
     <div class="container">
     <div class="row">
@@ -135,7 +238,6 @@
   </a>
     
   
-
     </div>
     </main>
   <footer class="footer">
@@ -183,5 +285,210 @@
 <script src="https://cdn.jsdelivr.net/npm/parallaxx-js/dist/parallax.js"></script>
   <script src="js/panel.js"></script>
 <script src="js/navbar.js"></script>
+<script>
+// Hero 2: pausa (speed=0) hasta cubrir ~90% del viewport; activa (speed=0.5) con offset;
+// al volver a subir y tocar el tope superior (rect.top >= 0), se reinicia: speed=0 y sin offset.
+(function(){
+  function enableHero2ParallaxOnFullCover(opts){
+    // Usa offsetVh para desplazar la imagen relativo al alto de la pantalla (más consistente en móvil)
+    // Ajusta offsetVh a tu gusto (p.ej., 40 = 40vh). Por defecto 50vh.
+    var options = Object.assign({ speedWhenActive: 0.5, threshold: 0.9, offsetVh: 50 }, opts || {});
+    var hero2 = document.getElementById('hero-2');
+    if (!hero2) return;
+
+    // Inicia con velocidad 0 (sin parallax)
+    hero2.dataset.speed = '0';
+    var activated = false;
+    var layer = null;
+
+    function check(){
+      var rect = hero2.getBoundingClientRect();
+      var viewportH = window.innerHeight || document.documentElement.clientHeight;
+      var offsetPx = Math.round((options.offsetVh || 0) * viewportH / 100);
+      // Activar cuando el hero2 cubra al menos el umbral del viewport (margen para arriba/abajo)
+      var visibleTop = Math.max(rect.top, 0);
+      var visibleBottom = Math.min(rect.bottom, viewportH);
+      var visibleHeight = Math.max(0, visibleBottom - visibleTop);
+      var coverage = visibleHeight / viewportH;
+      var coversThreshold = coverage >= options.threshold;
+      // Asegurar referencia a la capa
+      if (!layer) {
+        var container = hero2.parentElement;
+        layer = container ? container.querySelector('.parallax-layer') : null;
+      }
+
+      // Si ya está activo, mantener el offset recalculado (por ejemplo al rotar el dispositivo)
+      if (activated && layer) {
+        try { layer.style.top = (-offsetPx) + 'px'; } catch (e) {}
+      }
+
+      if (!activated && coversThreshold){
+        if (!layer) { setTimeout(check, 50); return; }
+        // Activar: subir imagen y fijar velocidad activa
+        try {
+          layer.style.top = (-offsetPx) + 'px';
+        } catch (e) {}
+        layer.setAttribute('data-parallax-speed', String(options.speedWhenActive));
+        hero2.dataset.speed = String(options.speedWhenActive);
+        activated = true;
+        window.dispatchEvent(new Event('scroll'));
+      }
+      // Reiniciar al tocar el tope de arriba del viewport
+      else if (activated && rect.top >= 0) {
+        if (layer) {
+          layer.setAttribute('data-parallax-speed', '0');
+          try {
+            layer.style.top = '0px';
+          } catch (e) {}
+        }
+        hero2.dataset.speed = '0';
+        activated = false;
+        window.dispatchEvent(new Event('scroll'));
+      }
+    }
+
+    window.addEventListener('scroll', check, { passive: true });
+    window.addEventListener('resize', check);
+    // Comprobar una vez al cargar
+    check();
+  }
+
+  // Exponer por si deseas llamarla manualmente luego
+  window.enableHero2ParallaxOnFullCover = enableHero2ParallaxOnFullCover;
+  // Ejecutar con speed 0.5 cuando active
+  enableHero2ParallaxOnFullCover({ speedWhenActive: 0.5 });
+})();
+</script>
+<script>
+// Snap básico:
+// - Si estás arriba del todo y scrolleas hacia abajo → va a #hero-2
+// - Si estás dentro de hero 2 y scrolleas hacia arriba → va a #hero-1
+(function(){
+  function enableBasicSnap(){
+    var h1 = document.getElementById('hero-1');
+    var h2 = document.getElementById('hero-2');
+    if (!h1 || !h2) return;
+
+    function getContainer(el){
+      // La librería envuelve .parallax en .parallax-container; si existe, usamos el padre
+      var p = el.parentElement;
+      if (p && p.classList && p.classList.contains('parallax-container')) return p;
+      return el;
+    }
+
+    var c1 = getContainer(h1);
+    var c2 = getContainer(h2);
+  var isAnimating = false;
+  var touchStartY = 0;
+  var targetTop = null;
+
+    function getTop(el){
+      var rect = el.getBoundingClientRect();
+      var y = window.pageYOffset || document.documentElement.scrollTop || 0;
+      return rect.top + y;
+    }
+
+    function scrollToElTop(el){
+      if (!el) return;
+      isAnimating = true;
+      touchStartY = 0; // Reset touch start position
+      targetTop = getTop(el);
+      try { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      catch(e){ window.scrollTo({ top: targetTop, behavior: 'smooth' }); }
+      // Fallback por tiempo máximo
+      setTimeout(function(){ isAnimating = false; targetTop = null; }, 1000);
+    }
+
+    function within(el){
+      var top = el.offsetTop;
+      var height = el.offsetHeight;
+      var y = window.pageYOffset || document.documentElement.scrollTop || 0;
+      return y >= top && y < top + height;
+    }
+
+    function atTop(){
+      var y = window.pageYOffset || document.documentElement.scrollTop || 0;
+      return y <= 10; // margen
+    }
+
+    var snapTargetEl = null; // decide destino durante el gesto
+    function onWheel(e){
+      if (isAnimating) { e.preventDefault(); return; }
+      var deltaY = e.deltaY || 0;
+      // Ignorar deltas muy pequeños (trackpad micro-gestos)
+      if (Math.abs(deltaY) < 20) return;
+      if (deltaY > 0 && atTop()){
+        // desde arriba → ir a hero 2
+        e.preventDefault();
+        scrollToElTop(c2);
+        return;
+      }
+      if (deltaY < 0 && within(c2)){
+        // dentro de hero 2 y sube → ir a hero 1
+        e.preventDefault();
+        scrollToElTop(c1);
+        return;
+      }
+    }
+
+    function onScroll(){
+      if (!isAnimating || targetTop == null) return;
+      var y = window.pageYOffset || document.documentElement.scrollTop || 0;
+      if (Math.abs(y - targetTop) <= 2){
+        // Llegamos al destino, liberar bloqueo
+        isAnimating = false;
+        targetTop = null;
+      }
+    }
+
+    function onTouchStart(e){
+      var t = e.touches && e.touches[0];
+      touchStartY = t ? t.clientY : 0;
+      snapTargetEl = null;
+    }
+
+    function onTouchMove(e){
+      if (isAnimating) return;
+      var t = e.touches && e.touches[0];
+      if (!t) return;
+      var dy = t.clientY - touchStartY; // + abajo, - arriba
+
+      // Umbral de gesto
+      var swipeThreshold = 40;
+
+      if (dy < -swipeThreshold && atTop()){
+        // swipe up desde arriba → ir a hero 2
+        snapTargetEl = c2;
+        // Evitar scroll nativo para no "pelear" con el snap
+        e.preventDefault();
+      } else if (dy > swipeThreshold && within(c2)){
+        // swipe down dentro de hero 2 → ir a hero 1
+        snapTargetEl = c1;
+        e.preventDefault();
+      } else {
+        snapTargetEl = null;
+      }
+    }
+
+    function onTouchEnd(e){
+      if (isAnimating) return;
+      if (snapTargetEl){
+        scrollToElTop(snapTargetEl);
+        snapTargetEl = null;
+      }
+    }
+
+    window.addEventListener('wheel', onWheel, { passive: false });
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('touchstart', onTouchStart, { passive: true });
+    window.addEventListener('touchmove', onTouchMove, { passive: false });
+    window.addEventListener('touchend', onTouchEnd, { passive: true });
+  }
+
+  // Exponer y activar
+  window.enableBasicSnap = enableBasicSnap;
+  enableBasicSnap();
+})();
+</script>
 </body>
 </html>

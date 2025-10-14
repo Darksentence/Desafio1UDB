@@ -342,8 +342,8 @@ section#contact {
   box-sizing: border-box;
 }
 :root {
-  --casi-blanco: #37ea1f; 
-  --rosa-pastel: #5ab560;
+  --casi-blanco: #e4e4e4; 
+  --rosa-pastel: #dd84d6;
   --rosa-oscuro: #e58211;
   --azul-gris: #d9d9e4;
   --azul-gris-oscuro: #00000b;
@@ -379,6 +379,7 @@ body {
 
 main {
   flex: 1 0 auto; /* allow main to grow and push footer down */
+  background-color: #e9e8e8;
 }
 
 img,
@@ -545,6 +546,27 @@ select {
   text-shadow: 2px 2px 6px var(--azul-gris-oscuro);
 }
 
+/* Asegura que los bloques .parallax puedan ocupar toda la pantalla */
+.parallax {
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center 50%;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background layer for manual parallax */
+.parallax .parallax-bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+  z-index: 0;
+  transform: translateY(0);
+}
+
 .hero .subtitulo {
   font-size: 1.5rem;
 }
@@ -581,7 +603,7 @@ select {
   background-color: transparent !important;
   padding: 0 !important;
   margin: 0.5rem 0 !important;
-  color: var(--casi-blanco);
+  color: var();
   text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
 }
 .parallax .text-center {
@@ -1501,13 +1523,6 @@ section#contact {
 
 * {
   box-sizing: border-box;
-}
-:root {
-  --casi-blanco: #3ed871; 
-  --rosa-pastel: #308335;
-  --rosa-oscuro: #ff9c2c;
-  --azul-gris: #d9d9e4;
-  --azul-gris-oscuro: #00000b;
 }
 
 *,
@@ -2440,4 +2455,39 @@ input {
     .footer-section {
         margin-bottom: 40px;
     }
+}
+.intro {
+  background: #e9e8e8;
+  padding: 60px 0;
+  text-align: center;
+}
+.intro h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+.intro p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #555;
+}
+.wave {
+  background: url("../svg/intersecting-curves.svg") no-repeat center bottom;
+  height: 100px;
+  background-size: cover;
+}
+.card {
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
+}
+
+.card-body .display-4 {
+    transition: all 0.3s ease;
+}
+
+.card:hover .card-body .display-4 {
+    transform: scale(1.1);
 }
