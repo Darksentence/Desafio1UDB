@@ -707,6 +707,41 @@ select {
   background-image: url('/root/Images/londres.jpg');
 }
 
+.all-rights {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700; /* Bold */
+  font-size: 15px;
+  padding: 0.5rem 1rem;
+  background-color: #CFB89E;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.about-history{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700; /* Bold */
+  font-size: 15px;
+  padding: 0.5rem 1rem;
+  background-color: #ff000000;
+  padding: 20px;
+  border-radius: 8px;
+  margin: auto;
+}
+.absubtitulo {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700; /* Bold */
+  font-size: 4rem;
+  padding: 0.5rem 1rem;
+}
+
+.abtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700; /* Bold */
+  font-size: 7rem;
+  padding: 0.5rem 1rem;
+}
+
 /*****CONTACTO******/
 
 .cont {
