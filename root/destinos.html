@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Destinos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/parallaxx-js/dist/parallax.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer" />
 </head>
 <body>
 <!-- Shared navbar (hamburger + overlay) -->
@@ -31,68 +35,126 @@
 <p class="logo">NEW TRAVEL</p>
 
     <main>
-        <div class="dest hero">
-            <div class="hero-content">
-                <p class="subtitulo">¿A donde quieres ir?</p>
-                <h1 class="titulo">TOURS PREMIUM EN<br>LOS 5 CONTINENTES</h1>
+        <div id="hero-1" class="parallax" data-speed = "0.5" data-image = 'Images/tuscania.jpg'> <!-- hero destinos -->
+            <div class="position-absolute" style="top:0; right:0; bottom:0; left:0; background-color: rgba(0,0,0,0.6);"></div>
+            <div class="text-center p-5 position-relative">
+                <span class="text-uppercase text-white fw-bold">¿A dónde quieres ir?</span>
+                <h1 class="mb-4 mt-2 fw-bold">Destinos</h1>
             </div>
         </div>
-        <div class="dest-contenido">
-            <div class="dest-contenido-txt">
-                <h1>Destinos</h1>
-                <p class="tagline">Desde cruceros hasta tours personalizados nos adaptamos a lo que necesites</p>
-                <p class="dest-txt">Con un concepto personalizado, diseñamos cada programa a su medida. Combinamos lo mejor de cada región, brindando calidad en el servicio y excelencia humana en la atención.</p>
-            </div>
-            <div class="dest-galeria">
-                <div class="dest-img" style="background-image: url('Images/suecia.jpg');">
-                    <span class="dest-name">Suecia</span>
-                </div>
-
-                <div class="dest-img" style="background-image: url('images/peru.jpg');">
-                    <span class="dest-name">Perú</span>
-                </div>
-
-                <div class="dest-img" style="background-image: url('images/francia.jpg');">
-                    <span class="dest-name">Francia</span>
-                </div>
-
-                <div class="dest-img" style="background-image: url('Images/argentina.jpg');">
-                    <span class="dest-name">Argentina</span>
-                </div>
-
-                <div class="dest-img" style="background-image: url('Images/sydney.jpg');">
-                    <span class="dest-name">Australia</span>
-                </div>
-
-                <div class="dest-img" style="background-image: url('Images/seattle.jpg');">
-                    <span class="dest-name">Seattle, EEUU</span>
-                </div>
-
-                <div class="dest-img" style="background-image: url('Images/rio2.jpg');">
-                    <span class="dest-name">Brazil</span>
-                </div>
-
-                <div class="dest-img" style="background-image: url('Images/niagara.jpg');">
-                    <span class="dest-name">Cátaratas del Niágara, EEUU</span>
-                </div>
-
-                <div class="dest-img" style="background-image: url('Images/china.jpg');">
-                    <span class="dest-name">China</span>
-                </div>
-
-                <div class="dest-img" style="background-image: url('Images/korea.jpg');">
-                    <span class="dest-name">Corea del Sur</span>
-                </div>
-
-                <div class="dest-img" style="background-image: url('Images/rusia.jpg');">
-                    <span class="dest-name">Rusia</span>
-                </div>
-
-                <div class="dest-img" style="background-image: url('Images/madagascar.jpg');">
-                    <span class="dest-name">Madagascar</span>
-                </div>
-            </div>
-        </div>
+                        <section class="popular-destinations  py-5">
+                            <div class="container">
+                                <div class="d-flex justify-content-between  align-items-end  mb-3">
+                                    <h2 class="section-title m-0">
+                                        Destinos
+                                    </h2>
+                                </div>
+                                <div class="row  g-4">
+                                    <!-- primeras 3 cards -->
+                                    <div class="col-12  col-sm-6 col-lg-4">
+                                        <a href="#" class='dest-card'>
+                                            <img alt="Francia" src="Images/francia.jpg"/>
+                                            <span class="badge">Cultural</span>
+                                            <div class="dest-overlay">
+                                                <h3>Francia</h3>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-12 col-sm-6  col-lg-4">
+                                        <a class="dest-card"  href="#">
+                                            <img src='Images/argentina.jpg' alt = "Argentina" />
+                                            <span class="badge">Aventura</span>
+                                            <div class="dest-overlay"><h3>Argentina</h3></div>
+                                        </a>
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-lg-4">
+                                        <a  class="dest-card" href="#">
+                                            <img src="Images/sydney.jpg" alt='Australia' />
+                                            <span class="badge">Playas</span>
+                                            <div class="dest-overlay">
+                                                <h3>Australia</h3>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <!-- fila 2 -->
+                                    <div class="col-12 col-sm-6 col-lg-4">
+                                        <a class="dest-card" href="#" >
+                                            <img src="Images/seattle.jpg" alt = "Seattle, EEUU"/>
+                                            <span class="badge">Urbano</span>
+                                            <div class="dest-overlay"><h3>Seattle, EEUU</h3></div>
+                                        </a>
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-lg-4">
+                                        <a  href="#" class="dest-card">
+                                            <img src = "Images/rio2.jpg" alt = 'Brasil' />
+                                            <span class="badge">Fiesta</span>
+                                            <div class="dest-overlay">
+                                                <h3>Brasil</h3>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-lg-4">
+                                        <a class = 'dest-card' href="#">
+                                            <img alt = "Cataratas del Niágara, EEUU" src = "Images/niagara.jpg" />
+                                            <span class="badge">Naturaleza</span>
+                                            <div class="dest-overlay">
+                                                <h3>Niágara, EEUU</h3>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <!-- fila 3 -->
+                                    <div class="col-12 col-sm-6 col-lg-4">
+                                        <a class="dest-card"  href="#">
+                                            <img src= "Images/china.jpg" alt ="China"/>
+                                            <span class="badge">Historia</span>
+                                            <div class="dest-overlay"><h3>China</h3></div>
+                                        </a>
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-lg-4">
+                                        <a class="dest-card" href="#">
+                                            <img src="Images/korea.jpg"  alt= "Corea del Sur" />
+                                            <span class="badge">Tecnología</span>
+                                            <div class="dest-overlay">
+                                                <h3>Corea del Sur</h3>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-lg-4">
+                                        <a class="dest-card" href="#">
+                                            <img src = 'Images/rusia.jpg' alt = 'Rusia' />
+                                            <span class="badge">Arquitectura</span>
+                                            <div class="dest-overlay"><h3>Rusia</h3></div>
+                                        </a>
+                                    </div>
+                                    <!-- fila 4 -->
+                                    <div class="col-12 col-sm-6 col-lg-4">
+                                        <a class = "dest-card" href = "#">
+                                            <img src = "Images/madagascar.jpg" alt = "Madagascar" />
+                                            <span class="badge">Safari</span>
+                                            <div class="dest-overlay">
+                                                <h3>Madagascar</h3>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-lg-4">
+                                        <a class="dest-card" href="#">
+                                            <img src= "Images/suecia.jpg" alt =  "Suecia" />
+                                            <span class="badge">Nórdico</span>
+                                            <div class="dest-overlay"><h3>Suecia</h3></div>
+                                        </a>
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-lg-4">
+                                        <a class="dest-card"  href="#">
+                                            <img src = "Images/peru.jpg" alt= 'Perú' />
+                                            <span class="badge">Mística</span>
+                                            <div class="dest-overlay">
+                                                <h3>Perú</h3>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
         </main>
     <footer class="footer">
     <div class="container">
@@ -101,10 +163,10 @@
                 <div class="footer-logo">Visítanos</div>
                 <p class="footer-about">Encuéntranos en nuestra oficina o síguenos en redes.</p>
                 <div class="social-links">
-                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+                    <a href="#" class="social-icon" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+                    <a href="#" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+                    <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
                 </div>
             </div>
 
@@ -136,6 +198,7 @@
         </div>
     </div>
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/parallaxx-js/dist/parallax.js"></script>
 <script src="js/navbar.js"></script>
 </body>
 </html>

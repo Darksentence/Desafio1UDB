@@ -10,59 +10,100 @@
         integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link rel="stylesheet" href="CSS/styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/parallaxx-js/dist/parallax.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer" />
 
 </head>
 
 <body>
     <!-- Shared navbar (hamburger + overlay) -->
     <div class="hamburger-menu" id="hamburger-menu">
-        <div class="menu-bar1"></div>
-        <div class="menu-bar2"></div>
-        <div class="menu-bar3"></div>
+  <div class="menu-bar1"></div>
+  <div class="menu-bar2"></div>
+  <div class="menu-bar3"></div>
+</div>
+
+<!-- Overlay navigation -->
+<div id="overlay" class="overlay overlay-slide-left">
+  <nav>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="calendario.html">Calendario</a></li>
+      <li><a href="experiencias.html">Experiencias</a></li>
+      <li><a href="destinos.html">Destinos</a></li>
+      <li><a href="deals.html">Deals</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+</div>
+
+<!-- Logo  -->
+<p class="logo" style="color: white;">Cosmos travel</p>
+
+  <main>
+  <div id="hero-1"
+    class="parallax"
+    data-speed = "0.5"
+    data-image = 'Images/londres.jpg'>
+
+    <div
+      class="position-absolute"
+      style="
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+      "
+    ></div>
+
+    <div class="text-center p-5 position-relative">
+      <span class="text-uppercase text-whitefw-bold">quienes somos?</span>
+      <h1 class="mb-4 mt-2 fw-bold">
+        creamos las experiencias que cuentan
+      </h1>
+  <div class="d-flex justify-content-center align-items-center flex-wrap gap-2">
+        
+      </div>
     </div>
+  </div>
 
-    <div id="overlay" class="overlay overlay-slide-left">
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="calendario.html">Calendario</a></li>
-                <li><a href="experiencias.html">Experiencias</a></li>
-                <li><a href="destinos.html">Destinos</a></li>
-                <li><a href="deals.html">Deals</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
-    </div>
+  <!-- Hero 2 --> 
 
-    <p class="logo" style="color: #ffffff;">NEW TRAVEL</p>
+  <div id="hero-2" class="parallax" data-speed = "0" data-image = "Images/peru.jpg">
 
-    <main>
-        <div class="about hero">
-            <div class="hero-content">
-                <p class="absubtitulo">¿Quienes somos?</p>
-                <h2 class="abtitle">CREAMOS LAS<br>EXPERIENCIAS QUE <br>CUENTAN</h2>
-            </div>
-        </div>
-    </main>
-    <div style="padding: 20px;" class="about-history">
-        <section class="about-history"
-            style="height: 50%; padding-bottom: 100px; display: flex; flex-direction: column; align-items: center; text-align: center;">
 
-            <h2 class="absubtitulo" style="color: #6B6B76; padding-bottom: 20px;">Nuestra Historia</h2>
+    <div
+      class="position-absolute"
+      style="
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+        
+      "
+    ></div>
 
-            <div style="display: flex; justify-content: center; width: 100%;">
-                <p style="color: black; width: 75%; margin: 0 auto;">
-                    Fundada en 2025, NEW TRAVEL nació de la pasión por explorar el mundo y la convicción de que cada
+    <div class="text-center p-5 position-relative">
+      <h1 class="text-uppercase text-whitefw-bold">Nuestra Historia</h1>
+      <h2 class="mb-4 mt-2 fw-bold">Fundada en 2025, NEW TRAVEL nació de la pasión por explorar el mundo y la convicción de que cada
                     viaje debe ser una experiencia única e inolvidable. Desde nuestros humildes comienzos, hemos crecido
                     hasta convertirnos en una agencia de viajes reconocida, dedicada a ofrecer aventuras personalizadas
                     que
                     conectan a los viajeros con las culturas locales y los paisajes impresionantes de todo el mundo.
                     Nuestro equipo de expertos en viajes trabaja incansablemente para diseñar itinerarios que no solo
                     cumplen, sino que superan las expectativas de nuestros clientes, asegurando que cada viaje sea
-                    verdaderamente especial.
-                </p>
-            </div>
+                    verdaderamente especial.</h2>
+  <div class="d-flex justify-content-center align-items-center flex-wrap gap-2">
+        
+  <a href="#contact" class="btn btn-outline-warning btn-lg rounded-pill px-5 py-2">
+        Buscar Destinos
+        </a>
+      </div>
+    </div>
+  </div>
+  
         </section>
 
 
@@ -83,8 +124,8 @@
                         </p>
                     </div>
 
-                    <div class="col-lg-6 order-lg-1" style="flex: 1 1 45%;">
-                        <img src="images/travel.jpg" alt="Nuestra Visión" class="img-fluid rounded"
+          <div class="col-lg-6 order-lg-1" style="flex: 1 1 45%;">
+            <img src="Images/travel.jpg" alt="Nuestra Visión" class="img-fluid rounded"
                             style="width: 640px; height: 640px; object-fit: cover;">
                     </div>
 
@@ -109,7 +150,7 @@
                     </div>
 
                     <div class="col-lg-6" style="flex: 1 1 45%; display: flex; justify-content: center;">
-                        <img src="images/about.jpg" alt="Nuestra Misión" class="img-fluid rounded"
+            <img src="Images/about.jpg" alt="Nuestra Misión" class="img-fluid rounded"
                             style="width: 640px; height: 640px; object-fit: cover;">
                     </div>
                 </div>
@@ -141,7 +182,7 @@
                     </div>
 
                     <div class="col-lg-6 order-lg-1" style="flex: 1 1 45%;">
-                        <img src="images/about2.jpg" alt="Nuestra Visión" class="img-fluid rounded"
+            <img src="Images/about2.jpg" alt="Nuestra Visión" class="img-fluid rounded"
                             style="width: 640px; height: 640px; object-fit: cover;">
                     </div>
                 </div>
@@ -149,59 +190,243 @@
         </section>
 
     </div>
-    <div class="all-rights">
-        <p style="margin: 0;">All rights reserved New Travel © 2025</p>
-    </div>
-
     <footer class="footer">
-        <div class="container">
-            <div class="row align-items-start">
-                <div class="col-lg-4 footer-section">
-                    <div class="footer-logo">Visítanos</div>
-                    <p class="footer-about">Encuéntranos en nuestra oficina o síguenos en redes.</p>
-                    <div class="social-links">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 footer-section">
-                    <h5>Ubicación</h5>
-                    <div class="footer-map">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1627.9934186087344!2d-89.71177898263399!3d13.956062473198967!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f62950005c33ce9%3A0x510b4d68709a540b!2sPeor%20es%20nada!5e0!3m2!1ses-419!2sus!4v1760313449784!5m2!1ses-419!2sus"
-                            style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 footer-section">
-                    <h5>Support</h5>
-                    <ul class="footer-links">
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Help Center</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Contact Support</a></li>
-                    </ul>
-                </div>
+      <div class="container">
+        <div class="row align-items-start">
+          <div class="col-lg-4 footer-section">
+            <div class="footer-logo">Visítanos</div>
+            <p class="footer-about">Encuéntranos en nuestra oficina o síguenos en redes.</p>
+            <div class="social-links">
+              <a href="#" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+              <a href="#" class="social-icon" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+              <a href="#" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+              <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
             </div>
-            <div class="footer-bottom">
-                <ul class="footer-bottom-links">
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Cookie Policy</a></li>
-                </ul>
-                <p>© 2025 NEW TRAVEL. All rights reserved.</p>
+          </div>
+
+          <div class="col-lg-4 footer-section">
+            <h5>Ubicación</h5>
+            <div class="footer-map">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1627.9934186087344!2d-89.71177898263399!3d13.956062473198967!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f62950005c33ce9%3A0x510b4d68709a540b!2sPeor%20es%20nada!5e0!3m2!1ses-419!2sus!4v1760313449784!5m2!1ses-419!2sus" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
+          </div>
+
+          <div class="col-lg-4 footer-section">
+            <h5>Support</h5>
+            <ul class="footer-links">
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Help Center</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Contact Support</a></li>
+            </ul>
+          </div>
         </div>
+        <div class="footer-bottom">
+          <ul class="footer-bottom-links">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Cookie Policy</a></li>
+          </ul>
+          <p>© 2025 NEW TRAVEL. All rights reserved.</p>
+        </div>
+      </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/parallaxx-js/dist/parallax.js"></script>
     <script src="js/panel.js"></script>
     <script src="js/navbar.js"></script>
+    <script>
+// Héroes 2, 3 y 4: inician en pausa (speed=0) hasta cubrir ~90% del viewport; al activarse usan speed=0.5 con offset.
+// al volver a subir y tocar el tope superior (rect.top >= 0), se reinicia: speed=0 y sin offset.
+(
+  function(){
+    function enableHeroParallaxOnFullCover(ids, opts){
+      var options = Object.assign({ speedWhenActive: 0.5, threshold: 0.9, offsetVh: 50 }, opts || {});
+
+      ids.forEach(function(id){
+        var el = document.getElementById(id);
+        if (!el) return;
+
+        el.dataset.speed = '0';
+        var activated = false;
+        var layer = null;
+
+        function check(){
+          var rect = el.getBoundingClientRect();
+          var viewportH = window.innerHeight || document.documentElement.clientHeight;
+          var offsetPx = Math.round((options.offsetVh || 0) * viewportH / 100);
+          var visibleTop = Math.max(rect.top, 0);
+          var visibleBottom = Math.min(rect.bottom, viewportH);
+          var visibleHeight = Math.max(0, visibleBottom - visibleTop);
+          var coverage = visibleHeight / viewportH;
+          var coversThreshold = coverage >= options.threshold;
+
+          if (!layer) {
+            // Intentar encontrar la capa dentro del propio hero; si no, en el contenedor padre
+            layer = el.querySelector && el.querySelector('.parallax-layer');
+            if (!layer) {
+              var container = el.parentElement;
+              layer = container ? container.querySelector('.parallax-layer') : null;
+            }
+          }
+
+          if (activated && layer) {
+            try { layer.style.top = (-offsetPx) + 'px'; } catch (e) {}
+          }
+
+          if (!activated && coversThreshold){
+            if (!layer) { setTimeout(check, 50); return; }
+            try { layer.style.top = (-offsetPx) + 'px'; } catch (e) {}
+            layer.setAttribute('data-parallax-speed', String(options.speedWhenActive));
+            el.dataset.speed = String(options.speedWhenActive);
+            activated = true;
+            window.dispatchEvent(new Event('scroll'));
+          }
+          else if (activated && rect.top >= 0) {
+            if (layer) {
+              layer.setAttribute('data-parallax-speed', '0');
+              try { layer.style.top = '0px'; } catch (e) {}
+            }
+            el.dataset.speed = '0';
+            activated = false;
+            window.dispatchEvent(new Event('scroll'));
+          }
+        }
+
+        window.addEventListener('scroll', check, { passive: true });
+        window.addEventListener('resize', check, { passive: true });
+        check();
+      });
+    }
+
+    window.enableHeroParallaxOnFullCover = enableHeroParallaxOnFullCover;
+    enableHeroParallaxOnFullCover(['hero-2','hero-3','hero-4'], { speedWhenActive: 0.5 });
+  }
+)();
+</script>
+<script>
+
+(
+  function(){
+    function enableMultiSnap(ids){
+      function getHeroEls(){
+        return ids.map(function(id){ return document.getElementById(id); }).filter(Boolean);
+      }
+      function getContainer(el){
+        var p = el.parentElement;
+        if (p && p.classList && p.classList.contains('parallax-container')) return p;
+        return el;
+      }
+      var isAnimating = false;
+      var touchStartY = 0;
+      var targetTop = null;
+
+      function getTop(el){
+        var rect = el.getBoundingClientRect();
+        var y = window.pageYOffset || document.documentElement.scrollTop || 0;
+        return rect.top + y;
+      }
+
+      function scrollToElTop(el){
+        if (!el) return;
+        isAnimating = true;
+        touchStartY = 0;
+        targetTop = getTop(el);
+        try { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+        catch(e){ window.scrollTo({ top: targetTop, behavior: 'smooth' }); }
+        setTimeout(function(){ isAnimating = false; targetTop = null; }, 1000);
+      }
+
+      function within(el){
+        var top = el.offsetTop;
+        var height = el.offsetHeight;
+        var y = window.pageYOffset || document.documentElement.scrollTop || 0;
+        return y >= top && y < top + height;
+      }
+
+      function atTop(){
+        var y = window.pageYOffset || document.documentElement.scrollTop || 0;
+        return y <= 10;
+      }
+
+      function currentIndex(containers){
+        for (var i=0;i<containers.length;i++){
+          if (within(containers[i])) return i;
+        }
+        return -1;
+      }
+
+      var snapTargetEl = null;
+      function onWheel(e){
+        if (isAnimating) { e.preventDefault(); return; }
+        var deltaY = e.deltaY || 0;
+        if (Math.abs(deltaY) < 20) return;
+
+        var containers = getHeroEls().map(getContainer);
+        if (containers.length < 2) return;
+        var idx = currentIndex(containers);
+        if (deltaY > 0){
+          // hacia abajo
+          if (idx === -1 && atTop()) { e.preventDefault(); scrollToElTop(containers[0]); return; }
+          if (idx >= 0 && idx < containers.length - 1){ e.preventDefault(); scrollToElTop(containers[idx+1]); return; }
+        } else {
+          // hacia arriba
+          if (idx > 0){ e.preventDefault(); scrollToElTop(containers[idx-1]); return; }
+        }
+      }
+
+      function onScroll(){
+        if (!isAnimating || targetTop == null) return;
+        var y = window.pageYOffset || document.documentElement.scrollTop || 0;
+        if (Math.abs(y - targetTop) <= 2){ isAnimating = false; targetTop = null; }
+      }
+
+      function onTouchStart(e){
+        var t = e.touches && e.touches[0];
+        touchStartY = t ? t.clientY : 0;
+        snapTargetEl = null;
+      }
+
+      function onTouchMove(e){
+        if (isAnimating) return;
+        var t = e.touches && e.touches[0];
+        if (!t) return;
+        var dy = t.clientY - touchStartY;
+        var swipeThreshold = 40;
+        var containers = getHeroEls().map(getContainer);
+        if (containers.length < 2) return;
+        var idx = currentIndex(containers);
+
+        if (dy < -swipeThreshold){
+          // swipe up → siguiente
+          if (idx === -1 && atTop()) { snapTargetEl = containers[0]; e.preventDefault(); }
+          else if (idx >= 0 && idx < containers.length - 1) { snapTargetEl = containers[idx+1]; e.preventDefault(); }
+        } else if (dy > swipeThreshold){
+          // swipe down → anterior
+          if (idx > 0) { snapTargetEl = containers[idx-1]; e.preventDefault(); }
+        } else {
+          snapTargetEl = null;
+        }
+      }
+
+      function onTouchEnd(){
+        if (isAnimating) return;
+        if (snapTargetEl){ scrollToElTop(snapTargetEl); snapTargetEl = null; }
+      }
+
+      window.addEventListener('wheel', onWheel, { passive: false });
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('touchstart', onTouchStart, { passive: true });
+      window.addEventListener('touchmove', onTouchMove, { passive: false });
+      window.addEventListener('touchend', onTouchEnd, { passive: true });
+    }
+
+    window.enableMultiSnap = enableMultiSnap;
+    enableMultiSnap(['hero-1','hero-2','hero-3','hero-4']);
+  }
+)();
+</script>
 </body>
 
 </html>

@@ -5,241 +5,293 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NEW TRAVEL</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
   <link rel="stylesheet" href="CSS/styles.css">
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/parallaxx-js/dist/parallax.css"
-  />
-  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/parallaxx-js/dist/parallax.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer" />
 </head>
 
-<body>
-<div class="hamburger-menu" id="hamburger-menu">
-  <div class="menu-bar1"></div>
-  <div class="menu-bar2"></div>
-  <div class="menu-bar3"></div>
-</div>
+<body class="page-index">
+  <!--  Shared navbar (hamburger + overlay)  -->
+  <div class="hamburger-menu" id="hamburger-menu">
+    <div class="menu-bar1"></div>
+    <div class="menu-bar2"></div>
+    <div class="menu-bar3"></div>
+  </div>
 
-<!-- Overlay navigation (used by js/navbar.js) -->
-<div id="overlay" class="overlay overlay-slide-left">
-  <nav>
-    <ul>
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="calendario.html">Calendario</a></li>
-      <li><a href="experiencias.html">Experiencias</a></li>
-      <li><a href="destinos.html">Destinos</a></li>
-      <li><a href="deals.html">Deals</a></li>
-      <li><a href="contacto.html">Contacto</a></li>
-    </ul>
-  </nav>
-</div>
+  <!-- Overlay navigation -->
+  <div id="overlay" class="overlay overlay-slide-left">
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="calendario.html">Calendario</a></li>
+        <li><a href="experiencias.html">Experiencias</a></li>
+        <li><a href="destinos.html">Destinos</a></li>
+        <li><a href="deals.html">Deals</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
 
-<!-- Logo fixed (kept) -->
-<p class="logo" style="color: white;">Cosmos travel</p>
+  <!-- Logo (ligero contorno por CSS) -->
+  <p class="logo" style="color: white;">Cosmos travel</p>
 
   <main>
-  <div id="hero-1"
-    class="parallax"
-    data-speed="0.5"
-    data-image="Images/rome.jpg">
-
-    <div
-      class="position-absolute"
-      style="
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background-color: rgba(0, 0, 0, 0.6);
-      "
-    ></div>
-
+  <!--  Hero 1  : portada  -->
+  <div id="hero-1" class="parallax" data-speed="0.5" data-image="Images/rome.jpg">
+    <div class="position-absolute" style="top:0; right:0; bottom:0; left:0; background-color: rgba(0,0,0,0.6);"></div>
     <div class="text-center p-5 position-relative">
-      <span class="text-uppercase text-whitefw-bold"
-        >Cosmos travel</span>
-      <h1 class="mb-4 mt-2 fw-bold">Una nueva forma de viajar</h1>
-  <div class="d-flex justify-content-center align-items-center flex-wrap gap-2">
-        <form action="#produk" role="search" onsubmit="return false;" class="pill-yellow d-flex align-items-center" style="height: calc(2em + 1rem);">
-          <input type="search" name="q" placeholder="Adonde quieres ir..." aria-label="Buscar" class="border-0 bg-transparent text-black" style="outline: none;">
-        </form>
-  <a href="#contact" class="btn btn-outline-warning btn-lg rounded-pill px-5 py-2">
-        Buscar Viajes
-        </a>
-      </div>
+      <span class="text-uppercase text-white fw-bold">viaja a tu manera</span>
+      <h1 class="mb-4 mt-2 fw-bold">Descubre el mundo con Cosmos Travel</h1>
+      <div class="d-flex justify-content-center align-items-center flex-wrap gap-2"><!-- ctas van aquí si se necesitan --></div>
+    </div>
+    <!-- Floating booking bar within hero-1 (buscador) -->
+    <div class="booking-fab">
+      <form class="booking-surface" aria-label="Buscador de viajes">
+        <div class="row g-3 align-items-end m-0">
+          <div class="col-12 col-md-4 col-lg-3">
+            <label class="form-label">Origen</label>
+            <input type="text" class="form-control" placeholder="Ciudad o aeropuerto" />
+          </div>
+          <div class="col-12 col-md-4 col-lg-3">
+            <label class="form-label">Destino</label>
+            <input type="text" class="form-control" placeholder="Ciudad o aeropuerto" />
+          </div>
+          <div class="col-6 col-md-4 col-lg-2">
+            <label class="form-label">Salida</label>
+            <input type="date" class="form-control" />
+          </div>
+          <div class="col-6 col-md-4 col-lg-2">
+            <label class="form-label">Regreso</label>
+            <input type="date" class="form-control" />
+          </div>
+          <div class="col-6 col-md-4 col-lg-1">
+            <label class="form-label">Pasaj.</label>
+            <select class="form-select">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4+</option>
+            </select>
+          </div>
+          <div class="col-6 col-md-4 col-lg-1 d-grid">
+            <button class="btn btn-warning fw-bold">Buscar</button>
+          </div>
+        </div>
+      </form>
     </div>
   </div>
 
-  <!--hero 2 --> 
-
-  <div
-    id="hero-2"
-    class="parallax"
-    data-speed="0"
-    data-image="Images/paris2.jpg">
-
-
-    <div
-      class="position-absolute"
-      style="
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background-color: rgba(0, 0, 0, 0.6);
-        
-      "
-    ></div>
-
+  <!-- Hero 2  (desbloquea parallax al cubrir el viewport) -->
+  <div id="hero-2" class="parallax" data-speed="0" data-image="Images/paris.jpg">
+    <div class="position-absolute" style="top:0;right:0;bottom:0;left:0;background-color:rgba(0,0,0,0.6);"></div>
     <div class="text-center p-5 position-relative">
-      <span class="text-uppercase text-whitefw-bold"
-        >Cosmos travel</span>
-      <h1 class="mb-4 mt-2 fw-bold">Conoce nuevos destinos</h1>
-  <div class="d-flex justify-content-center align-items-center flex-wrap gap-2">
-        
-  <a href="#contact" class="btn btn-outline-warning btn-lg rounded-pill px-5 py-2">
-        Buscar Destinos
-        </a>
+      <h1 class="text-uppercase text-white fw-bold">Tu próxima aventura empieza aquí</h1>
+      <div class="d-flex justify-content-center align-items-center flex-wrap gap-2">
+        <a class="btn btn-outline-warning btn-lg rounded-pill px-5 py-2" href="#contact">Explorar destinos</a>
       </div>
     </div>
   </div>
-  <div class="intro">
-  <div class="intro-container">
-    <h2>Descubre experiencias únicas en todo el mundo</h2>
-    <p>Explora más de 100 destinos con guías locales, itinerarios personalizados y ofertas exclusivas para tu próxima aventura.</p>
-  </div>
-</div>
 
-  <h1 class="mb-4 mt-2 fw-bold spotlight-title" style="background-color:#e9e8e8; color: #858383">Spotlight del mes</h1>
-
-  <!-- Our Product Section -->
-<section class="container py-5 my-5" id="products">
-
-  <div class="row g-4">
-    <!-- Product Card 1 -->
-    <div class="col-md-6 col-lg-4">
-      <div class="card h-50">
-        <img src="https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg" class="card-img-top" alt="Produk 1">
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title">Produk A</h5>
-          <p class="card-text">Deskripsi singkat dari produk A yang menarik dan informatif.</p>
-          <p class="fw-bold text-primary">Rp50.000</p>
-          <div class="mt-auto d-flex justify-content-between">
-            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detailProdukA">
-              Lihat Detail
-            </button>
-            <a href="#" class="btn btn-success">Beli Sekarang</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Product Card 2 -->
-    <div class="col-md-6 col-lg-4">
-      <div class="card h-50">
-        <img src="https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg" class="card-img-top" alt="Produk 2">
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title">Produk B</h5>
-          <p class="card-text">Deskripsi singkat dari produk B yang informatif dan ringkas.</p>
-          <p class="fw-bold text-primary">Rp75.000</p>
-          <div class="mt-auto d-flex justify-content-between">
-            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detailProdukB">
-              Lihat Detail
-            </button>
-            <a href="#" class="btn btn-success">Beli Sekarang</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Product Card 3 -->
-    <div class="col-md-6 col-lg-4">
-      <div class="card h-50">
-        <img src="https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg" class="card-img-top" alt="Produk 3">
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title">Produk C</h5>
-          <p class="card-text">Deskripsi menarik dari produk C yang menjelaskan fitur utamanya.</p>
-          <p class="fw-bold text-primary">Rp100.000</p>
-          <div class="mt-auto d-flex justify-content-between">
-            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detailProdukC">
-              Lihat Detail
-            </button>
-            <a href="#" class="btn btn-success">Beli Sekarang</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-  <div class="container panels">
-      <div class="panel active" style="background-image: url('https://images.unsplash.com/photo-1558979158-65a1eaa08691?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')">
-        <h3>Explore The World</h3>
-      </div>
-      <div class="panel" style="background-image: url('https://images.unsplash.com/photo-1572276596237-5db2c3e16c5d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')">
-        <h3>Wild Forest</h3>
-      </div>
-      <div class="panel" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1353&q=80')">
-        <h3>Sunny Beach</h3>
-      </div>
-      <div class="panel" style="background-image: url('https://images.unsplash.com/photo-1551009175-8a68da93d5f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80')">
-        <h3>City on Winter</h3>
-      </div>
-      <div class="panel" style="background-image: url('https://images.unsplash.com/photo-1549880338-65ddcdfd017b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')">
-        <h3>Mountains - Clouds</h3>
-      </div>
-
-    </div>
-    
-  
-
-      <h1 class="mb-4 mt-2 fw-bold spotlight-title" style="color: #858383; background-color: #e9e8e8;">Destinos Mas visitados</h1>
-
+  <!-- Popular destinations (lista editable) -->
+  <section class="popular-destinations  py-5">
     <div class="container">
-    <div class="row">
-
-        <div class="col-lg-4 col-md-6 gallery-item">
-            <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1" alt="Animals" class="img-fluid">
-      <div class="gallery-caption">Animals</div>
+      <div class="d-flex  justify-content-between align-items-end  mb-3">
+        <h2 class="section-title m-0"> Destinos populares </h2>
+        <a class="btn btn-sm btn-outline-dark rounded-pill" href="destinos.html">Ver todos</a>
+      </div>
+      <!-- grid -->
+      <div class="row  g-4">
+        <div class="col-12 col-sm-6 col-lg-4">
+          <a class="dest-card" href="destinos.html">
+            <img src="Images/paris.jpg" alt="París" />
+            <span class="badge">Desde $499</span>
+            <div class="dest-overlay">
+              <h3>París</h3>
+            </div>
+          </a>
         </div>
-
-        <div class="col-lg-4 col-md-6 gallery-item">
-            <img src="https://images.unsplash.com/photo-1552083375-1447ce886485" alt="Architecture" class="img-fluid">
-      <div class="gallery-caption">Architecture</div>
+        <div class="col-12 col-sm-6 col-lg-4">
+          <a class="dest-card" href="destinos.html">
+            <img src="Images/rio2.jpg" alt="Río de Janeiro" />
+            <span class="badge">Desde $399</span>
+            <div class="dest-overlay">
+              <h3>Río de Janeiro</h3>
+            </div>
+          </a>
         </div>
-
-        <div class="col-lg-4 col-md-6 gallery-item">
-            <img src="https://images.unsplash.com/photo-1516496636080-14fb876e029d" alt="Travel" class="img-fluid">
-      <div class="gallery-caption">Travel</div>
+        <div class="col-12 col-sm-6 col-lg-4">
+          <a class="dest-card" href="destinos.html">
+            <img src="Images/tokio.jpg" alt="Tokio" />
+            <span class="badge">Desde $699</span>
+            <div class="dest-overlay">
+              <h3>Tokio</h3>
+            </div>
+          </a>
         </div>
-
-        <div class="col-lg-4 col-md-6 gallery-item">
-            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Beach" class="img-fluid">
-      <div class="gallery-caption">Beach</div>
+        <div class="col-12 col-sm-6 col-lg-4">
+          <a class="dest-card" href="destinos.html">
+            <img src="Images/rome.jpg" alt="Roma" />
+            <span class="badge">Desde $549</span>
+            <div class="dest-overlay">
+              <h3>Roma</h3>
+            </div>
+          </a>
         </div>
-
-        <div class="col-lg-4 col-md-6 gallery-item">
-            <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba" alt="Mountains" class="img-fluid">
-      <div class="gallery-caption">Mountains</div>
+        <div class="col-12 col-sm-6 col-lg-4">
+          <a class="dest-card" href="destinos.html">
+            <img src="Images/sydney.jpg" alt="Sídney" />
+            <span class="badge">Desde $799</span>
+            <div class="dest-overlay">
+              <h3>Sídney</h3>
+            </div>
+          </a>
         </div>
-
-        <div class="col-lg-4 col-md-6 gallery-item">
-            <img src="https://images.unsplash.com/photo-1516496636080-14fb876e029d" alt="Nature" class="img-fluid">
-      <div class="gallery-caption">Nature</div>
+        <div class="col-12 col-sm-6 col-lg-4">
+          <a class="dest-card" href="destinos.html">
+            <img src="Images/morocco.jpg" alt="Marruecos" />
+            <span class="badge">Desde $459</span>
+            <div class="dest-overlay">
+              <h3>Marruecos</h3>
+            </div>
+          </a>
         </div>
-
+      </div>
     </div>
-</div>
-<div class="text-center my-4">
-  <a href="#contact" class="btn btn-agenda btn-lg rounded-pill px-5 pt-2">
-    agenda tu viaje
-  </a>
-    
-  
+  </section>
+
+  <!-- Featured deals  -->
+  <section class="featured-deals  py-5">
+    <div class="container">
+      <h2 class="section-title mb-4">Ofertas destacadas</h2>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="deal-card h-100">
+            <img src="Images/grecia.jpg" alt="Grecia" />
+            <div class="deal-body">
+              <h3 class="deal-title">Islas Griegas 7D/6N</h3>
+              <p class="deal-meta">Vuelo + Hotel 4★ · Desayuno</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="price">$899</span>
+                <a href="deals.html" class="btn btn-sm btn-warning rounded-pill">Reservar</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="deal-card h-100">
+            <img src="Images/dubai.jpg" alt="Dubái" />
+            <div class="deal-body">
+              <h3 class="deal-title">Dubái de Lujo 5D/4N</h3>
+              <p class="deal-meta">City tour · Safari en el desierto</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="price">$1099</span>
+                <a href="deals.html" class="btn btn-sm btn-warning rounded-pill">Reservar</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="deal-card h-100">
+            <img src="Images/peru.jpg" alt="Perú" />
+            <div class="deal-body">
+              <h3 class="deal-title">Aventura en Perú 6D/5N</h3>
+              <p class="deal-meta">Cusco · Machu Picchu · Traslados</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="price">$799</span>
+                <a href="deals.html" class="btn btn-sm btn-warning rounded-pill">Reservar</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    </main>
+  </section>
+
+  <!-- Why us  (ventajas) -->
+  <section class="why-us  py-5">
+    <div class="container">
+      <h2 class="section-title mb-4 text-center">¿Por qué viajar con nosotros?</h2>
+      <div class="row g-4 text-center">
+        <div class="col-6 col-md-3">
+          <i class="fa-solid fa-tags fa-2x mb-2"></i>
+          <h5 class="mb-1">Mejores precios</h5>
+          <p class="text-body-secondary small">Ofertas exclusivas negociadas con socios.</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <i class="fa-solid fa-shield-heart fa-2x mb-2"></i>
+          <h5 class="mb-1">Asistencia 24/7</h5>
+          <p class="text-body-secondary small">Soporte real antes y durante tu viaje.</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <i class="fa-solid fa-globe fa-2x mb-2"></i>
+          <h5 class="mb-1">Cobertura global</h5>
+          <p class="text-body-secondary small">Más de 100 destinos con guías locales.</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <i class="fa-solid fa-suitcase-rolling fa-2x mb-2"></i>
+          <h5 class="mb-1">Viajes a medida</h5>
+          <p class="text-body-secondary small">Itinerarios flexibles según tu estilo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials  -->
+  <section class="testimonials  py-5">
+    <div class="container">
+      <h2 class="section-title mb-4 text-center">Lo que dicen nuestros viajeros</h2>
+      <div class="row g-4">
+        <div class="col-12 col-md-4">
+          <div class="testi-card h-100">
+            <p class="mb-2">“Organización impecable y hoteles de primera. ¡Repetiría sin dudar!”</p>
+            <div class="d-flex align-items-center gap-2">
+              <i class="fa-solid fa-user-circle"></i><strong>María P.</strong>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="testi-card h-100">
+            <p class="mb-2">“Nos ayudaron a resolver un cambio de vuelo en minutos. Servicio 10/10.”</p>
+            <div class="d-flex align-items-center gap-2">
+              <i class="fa-solid fa-user-circle"></i><strong>Carlos M.</strong>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="testi-card h-100">
+            <p class="mb-2">“Itinerario perfecto y actividades increíbles. Superaron nuestras expectativas.”</p>
+            <div class="d-flex align-items-center gap-2">
+              <i class="fa-solid fa-user-circle"></i><strong>Ana G.</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter  -->
+  <section class="newsletter  py-5">
+    <div class="container">
+      <div class="newsletter-card p-4 p-md-5">
+        <div class="row g-3 align-items-center">
+          <div class="col-12 col-md-6">
+            <h3 class="mb-1">Recibe ofertas antes que nadie</h3>
+            <p class="text-body-secondary mb-0">Suscríbete y obtén descuentos exclusivos en vuelos y paquetes.</p>
+          </div>
+          <div class="col-12 col-md-6">
+            <form class="d-flex gap-2">
+              <input type="email" class="form-control form-control-lg" placeholder="Tu correo" />
+              <button class="btn btn-lg btn-warning fw-bold">Suscribirme</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  </main>
   <footer class="footer">
   <div class="container">
     <div class="row align-items-start">
@@ -247,10 +299,10 @@
         <div class="footer-logo">Visítanos</div>
         <p class="footer-about">Encuéntranos en nuestra oficina o síguenos en redes.</p>
         <div class="social-links">
-          <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-          <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#" class="social-icon" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+          <a href="#" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
         </div>
       </div>
 
@@ -285,6 +337,7 @@
 <script src="https://cdn.jsdelivr.net/npm/parallaxx-js/dist/parallax.js"></script>
   <script src="js/panel.js"></script>
 <script src="js/navbar.js"></script>
+<script src="js/carrousel.js"></script>
 <script>
 // Hero 2: pausa (speed=0) hasta cubrir ~90% del viewport; activa (speed=0.5) con offset;
 // al volver a subir y tocar el tope superior (rect.top >= 0), se reinicia: speed=0 y sin offset.
@@ -348,21 +401,17 @@
     }
 
     window.addEventListener('scroll', check, { passive: true });
-    window.addEventListener('resize', check);
-    // Comprobar una vez al cargar
+
     check();
   }
 
-  // Exponer por si deseas llamarla manualmente luego
   window.enableHero2ParallaxOnFullCover = enableHero2ParallaxOnFullCover;
-  // Ejecutar con speed 0.5 cuando active
+
   enableHero2ParallaxOnFullCover({ speedWhenActive: 0.5 });
 })();
 </script>
 <script>
-// Snap básico:
-// - Si estás arriba del todo y scrolleas hacia abajo → va a #hero-2
-// - Si estás dentro de hero 2 y scrolleas hacia arriba → va a #hero-1
+
 (function(){
   function enableBasicSnap(){
     var h1 = document.getElementById('hero-1');
@@ -370,7 +419,7 @@
     if (!h1 || !h2) return;
 
     function getContainer(el){
-      // La librería envuelve .parallax en .parallax-container; si existe, usamos el padre
+
       var p = el.parentElement;
       if (p && p.classList && p.classList.contains('parallax-container')) return p;
       return el;
@@ -391,11 +440,11 @@
     function scrollToElTop(el){
       if (!el) return;
       isAnimating = true;
-      touchStartY = 0; // Reset touch start position
+      touchStartY = 0; 
       targetTop = getTop(el);
       try { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
       catch(e){ window.scrollTo({ top: targetTop, behavior: 'smooth' }); }
-      // Fallback por tiempo máximo
+
       setTimeout(function(){ isAnimating = false; targetTop = null; }, 1000);
     }
 
@@ -408,23 +457,23 @@
 
     function atTop(){
       var y = window.pageYOffset || document.documentElement.scrollTop || 0;
-      return y <= 10; // margen
+      return y <= 10; 
     }
 
     var snapTargetEl = null; // decide destino durante el gesto
     function onWheel(e){
       if (isAnimating) { e.preventDefault(); return; }
       var deltaY = e.deltaY || 0;
-      // Ignorar deltas muy pequeños (trackpad micro-gestos)
+
       if (Math.abs(deltaY) < 20) return;
       if (deltaY > 0 && atTop()){
-        // desde arriba → ir a hero 2
+
         e.preventDefault();
         scrollToElTop(c2);
         return;
       }
       if (deltaY < 0 && within(c2)){
-        // dentro de hero 2 y sube → ir a hero 1
+
         e.preventDefault();
         scrollToElTop(c1);
         return;
@@ -435,7 +484,7 @@
       if (!isAnimating || targetTop == null) return;
       var y = window.pageYOffset || document.documentElement.scrollTop || 0;
       if (Math.abs(y - targetTop) <= 2){
-        // Llegamos al destino, liberar bloqueo
+
         isAnimating = false;
         targetTop = null;
       }
@@ -451,15 +500,15 @@
       if (isAnimating) return;
       var t = e.touches && e.touches[0];
       if (!t) return;
-      var dy = t.clientY - touchStartY; // + abajo, - arriba
+      var dy = t.clientY - touchStartY; 
 
-      // Umbral de gesto
+  
       var swipeThreshold = 40;
 
       if (dy < -swipeThreshold && atTop()){
         // swipe up desde arriba → ir a hero 2
         snapTargetEl = c2;
-        // Evitar scroll nativo para no "pelear" con el snap
+
         e.preventDefault();
       } else if (dy > swipeThreshold && within(c2)){
         // swipe down dentro de hero 2 → ir a hero 1
