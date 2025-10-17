@@ -612,7 +612,7 @@ body.page-index main { background: #ffffff; }
   width: min(1120px, 92vw);
 }
 .booking-surface {
-  background: rgba(255,255,255,0.96);
+  background: rgba(223, 185, 185, 0.527);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border: 1px solid rgba(0,0,0,0.08);
