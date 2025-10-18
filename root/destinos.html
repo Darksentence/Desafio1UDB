@@ -209,6 +209,21 @@
 <script src="https://cdn.jsdelivr.net/npm/parallaxx-js/dist/parallax.js"></script>
 <script src="js/navbar.js"></script>
 <script>
+// Fallback: si la librería parallax no aplica el fondo, setear background-image por CSS
+document.addEventListener('DOMContentLoaded', function(){
+    var hero = document.getElementById('hero-1');
+    if(!hero) return;
+    var img = hero.getAttribute('data-image');
+    // parallaxx-js suele crear una capa; si no existe, aplicamos fondo directamente
+    var hasLayer = hero.querySelector('.parallax-layer, .parallax-bg');
+    if(!hasLayer && img){
+        hero.style.backgroundImage = 'url(' + img + ')';
+        hero.style.backgroundSize = 'cover';
+        hero.style.backgroundPosition = 'center';
+    }
+});
+</script>
+<script>
 (function(){
     const params = new URLSearchParams(window.location.search);
     const origin = params.get('origin') || '';

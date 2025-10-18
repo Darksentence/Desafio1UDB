@@ -937,7 +937,8 @@ body.page-index main {
 .featured-deals,
 .why-us,
 .testimonials,
-.newsletter {
+.newsletter,
+.search-results {
   height: auto;
   min-height: 0;
   text-transform: none;
@@ -1229,7 +1230,7 @@ a.mobil-vr {
   background-color: transparent !important;
   padding: 0 !important;
   margin: 0.5rem 0 !important;
-  color: var();
+  color: #fff;
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
 }
 
@@ -1546,117 +1547,29 @@ form {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-
-  /* Features + Offers two-column layout */
-  .features-offers .intro .intro-container {
-    max-width: 100%;
-    margin: 0;
-  }
-
-  .features-offers .section-title {
-    text-align: left;
-  }
-
-  .features-offers .ribbon-card {
-    background: #fff;
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    border-radius: 14px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-  }
-
-  .features-offers .ribbon-card h3 {
-    margin-bottom: .25rem;
-  }
-
-  .features-offers .ribbon-card p {
-    margin-bottom: .75rem;
-  }
-
-  .features-offers .mist-slider .container {
-    max-width: 100%;
-    height: 420px;
-  }
-
-  .features-offers .mist-slider .slide .item {
-    height: 280px;
-  }
-
-  .features-offers .mist-slider .button {
-    margin-top: 12px;
-  }
-
-  /* Push content further apart on larger screens */
-  .features-offers .row {
-    --bs-gutter-x: 2rem;
-  }
-
-  @media (min-width: 992px) {
-    .features-offers .row {
-      --bs-gutter-x: 3rem;
-    }
-  }
-
-  @media (min-width: 1200px) {
-    .features-offers .row {
-      --bs-gutter-x: 4rem;
-    }
-  }
-
-  /* Make section full-bleed with inner side paddings */
-  .features-offers .container-fluid {
-    max-width: 100%;
-  }
-
-  .features-offers .row {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-  @media (min-width: 992px) {
-    .features-offers .row {
-      padding-left: 2rem;
-      padding-right: 2rem;
-    }
-  }
-
-  @media (min-width: 1200px) {
-    .features-offers .row {
-      padding-left: 3rem;
-      padding-right: 3rem;
-    }
-  }
-
-  /* Anchor blocks to their sides to avoid looking centered */
-  .features-offers .col-xl-5 {
-    margin-left: 0;
-  }
-
-  .features-offers .col-xl-7 .mist-slider .container {
-    margin-left: auto;
-  }
-
-  @media (max-width: 991.98px) {
-    .features-offers .mist-slider .container {
-      height: 360px;
-    }
-
-    .features-offers .mist-slider .slide .item {
-      height: 240px;
-    }
-  }
-
-  @media (max-width: 575.98px) {
-    .features-offers .mist-slider .container {
-      height: 320px;
-    }
-
-    .features-offers .mist-slider .slide .item {
-      height: 220px;
-    }
-  }
-
   transition: all 0.18s ease;
 }
+
+/* Features + Offers two-column layout (moved out of nested block) */
+.features-offers .intro .intro-container { max-width: 100%; margin: 0; }
+.features-offers .section-title { text-align: left; }
+.features-offers .ribbon-card { background: #fff; border: 1px solid rgba(0,0,0,0.08); border-radius: 14px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+.features-offers .ribbon-card h3 { margin-bottom: .25rem; }
+.features-offers .ribbon-card p { margin-bottom: .75rem; }
+.features-offers .mist-slider .container { max-width: 100%; height: 420px; }
+.features-offers .mist-slider .slide .item { height: 280px; }
+.features-offers .mist-slider .button { margin-top: 12px; }
+.features-offers .row { --bs-gutter-x: 2rem; }
+@media (min-width: 992px) { .features-offers .row { --bs-gutter-x: 3rem; } }
+@media (min-width: 1200px) { .features-offers .row { --bs-gutter-x: 4rem; } }
+.features-offers .container-fluid { max-width: 100%; }
+.features-offers .row { padding-left: 1rem; padding-right: 1rem; }
+@media (min-width: 992px) { .features-offers .row { padding-left: 2rem; padding-right: 2rem; } }
+@media (min-width: 1200px) { .features-offers .row { padding-left: 3rem; padding-right: 3rem; } }
+.features-offers .col-xl-5 { margin-left: 0; }
+.features-offers .col-xl-7 .mist-slider .container { margin-left: auto; }
+@media (max-width: 991.98px) { .features-offers .mist-slider .container { height: 360px; } .features-offers .mist-slider .slide .item { height: 240px; } }
+@media (max-width: 575.98px) { .features-offers .mist-slider .container { height: 320px; } .features-offers .mist-slider .slide .item { height: 220px; } }
 
 .calendar-section .date-cell:hover:not(:disabled) {
   background: rgba(255, 255, 255, 0.12);
@@ -3171,7 +3084,7 @@ a.mobil-vr {
 }
 
 /* Autocomplete suggestions */
-.suggestions{ position: absolute; background:#ffffff; border:0px solid #e6e6e6; width: auto; max-height:220px; overflow:auto; z-index:1200; border-radius:6px; margin-top:6px; box-shadow:0 6px 18px rgba(0,0,0,0.08); }
+.suggestions{ position: absolute; background:#ffffff; border:0px solid #e6e6e6; width: 100%; max-height:220px; overflow:auto; z-index:1200; border-radius:6px; margin-top:6px; box-shadow:0 6px 18px rgba(0,0,0,0.08); }
 .suggest-item{ padding:8px 10px; cursor:pointer; border-bottom:1px solid #f5f5f5; }
 .suggest-item:hover{ background:#f7f7f7; }
 
@@ -4128,4 +4041,41 @@ input {
   .trip-overview {
     --card-width: 240px;
   }
+}
+
+/* --- Fix: evitar que el título del Hero 1 se tape en pantallas pequeñas --- */
+@media (max-width: 767px) {
+  /* Anula el margen negativo previo y agrega colchón vertical */
+  #hero-1 .text-center {
+    margin-top: 0 !important;
+    padding-top: 14vh; /* separa el título del borde superior */
+    padding-bottom: 4vh;
+  }
+
+  /* Baja la barra flotante de búsqueda para que no invada el título */
+  .booking-fab {
+    bottom: 6vh; /* antes: 12vh en tablets */
+    width: min(96vw, 640px);
+  }
+
+  .booking-surface {
+    padding: 12px; /* compácta el alto en móviles */
+  }
+}
+
+@media (max-width: 575.98px) {
+  #hero-1 .text-center {
+    padding-top: 16vh; /* un poco más de espacio en teléfonos muy pequeños */
+    padding-bottom: 2vh;
+  }
+
+  .booking-fab {
+    bottom: 4vh;
+    width: 94vw;
+  }
+}
+
+/* Asegura color legible del título sobre el parallax (por si reglas previas fallan) */
+.parallax h1 {
+  color: #fff;
 }
