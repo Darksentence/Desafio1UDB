@@ -1327,7 +1327,84 @@ a.mobil-vr {
 /*****DEALS******/
 
 .deals {
-  background-image: url('/root/Images/tokio.jpg');
+  background-image: url('../Images/tokio.jpg');
+}
+
+.deals-contenido-txt {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.deals-contenido-txt h1 {
+  color: var(--azul-gris)
+}
+
+.deals-contenido-txt .tagline{
+  font-weight:600;
+}
+
+.deals-contenido {
+  max-width: 80%;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.div-card {
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 2px 2px 15px var(--azul-gris);
+  background-color: var(--casi-blanco);
+  display: flex;
+  flex-direction: column;
+}
+
+.deals-galeria {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+}
+
+.deals-img {
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+}
+
+.deals-info {
+  padding: 0 25px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.deals-titulo, .deals-precio {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--azul-gris-oscuro);
+}
+
+.deals-btn {
+  margin: 40px 15px;
+  padding: 10px 0;
+  text-align: center;
+  background-color: var(--rosa-oscuro);
+  color: var(--azul-gris-oscuro);
+  font-weight: 500;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+@media (max-width: 767px) {
+  .deals-galeria {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
 }
 
 /*****ABOUT******/
