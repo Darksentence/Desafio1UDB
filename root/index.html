@@ -49,15 +49,17 @@
     </div>
     <!-- Floating booking bar within hero-1 (buscador) -->
     <div class="booking-fab">
-      <form class="booking-surface" aria-label="Buscador de viajes">
+  <form class="booking-surface" id="searchForm" aria-label="Buscador de viajes">
         <div class="row g-3 align-items-end m-0">
           <div class="col-12 col-md-4 col-lg-3">
             <label class="form-label">Origen</label>
-            <input type="text" class="form-control" placeholder="Ciudad o aeropuerto" />
+            <input type="text" id="originInput" class="form-control" placeholder="Ciudad o aeropuerto" autocomplete="off" />
+            <div class="suggestions" id="originSuggestions"></div>
           </div>
           <div class="col-12 col-md-4 col-lg-3">
             <label class="form-label">Destino</label>
-            <input type="text" class="form-control" placeholder="Ciudad o aeropuerto" />
+            <input type="text" id="destinationInput" class="form-control" placeholder="Ciudad o aeropuerto" autocomplete="off" />
+            <div class="suggestions" id="destinationSuggestions"></div>
           </div>
           <div class="col-6 col-md-4 col-lg-2">
             <label class="form-label">Salida</label>
@@ -77,7 +79,7 @@
             </select>
           </div>
           <div class="col-6 col-md-4 col-lg-1 d-grid">
-            <button class="btn btn-warning fw-bold">Buscar</button>
+            <button class="btn btn-warning fw-bold" id="searchBtn" type="submit">Buscar</button>
           </div>
         </div>
       </form>
@@ -338,6 +340,7 @@
   <script src="js/panel.js"></script>
 <script src="js/navbar.js"></script>
 <script src="js/carrousel.js"></script>
+  <script src="js/actions.js"></script>
 <script>
 // Hero 2: pausa (speed=0) hasta cubrir ~90% del viewport; activa (speed=0.5) con offset;
 // al volver a subir y tocar el tope superior (rect.top >= 0), se reinicia: speed=0 y sin offset.
@@ -539,5 +542,67 @@
   enableBasicSnap();
 })();
 </script>
+  <script>
+  // Autocompletado usando data/destinos.json + búsquedas recientes en localStorage
+  (function(){
+    let data = { destinations: [], deals: [] };
+    fetch('data/destinos.json').then(r=>r.json()).then(j=>{ data = j; }).catch(()=>{ /* ignore */ });
+
+    function renderSuggestions(box, items){
+      box.innerHTML = '';
+      items.forEach(it=>{
+        const div = document.createElement('div');
+        div.className = 'suggest-item';
+        div.innerHTML = `<strong>${it.name}</strong> <small class="muted">${it.airports && it.airports[0] ? it.airports[0].code : ''}</small>`;
+        div.addEventListener('click', ()=>{ box.previousElementSibling.value = it.name; box.innerHTML=''; });
+        box.appendChild(div);
+      });
+    }
+
+    function setupInput(idInput, idSuggestions){
+      const input = document.getElementById(idInput);
+      const box = document.getElementById(idSuggestions);
+      input.addEventListener('input', ()=>{
+        const q = input.value.trim().toLowerCase();
+        box.innerHTML = '';
+        if(!q) return;
+        const matches = data.destinations.filter(d=> d.name.toLowerCase().includes(q) || (d.airports||[]).some(a=> a.code.toLowerCase().includes(q))).slice(0,6);
+        renderSuggestions(box, matches);
+      });
+      document.addEventListener('click', e=>{ if(!input.contains(e.target)) box.innerHTML=''; });
+    }
+
+    setupInput('originInput','originSuggestions');
+    setupInput('destinationInput','destinationSuggestions');
+
+    // Búsquedas recientes
+    function getRecent(){ try{ return JSON.parse(localStorage.getItem('recentSearches')||'[]'); }catch(e){ return []; } }
+    function pushRecent(item){ const arr = getRecent(); arr.unshift(item); while(arr.length>6) arr.pop(); localStorage.setItem('recentSearches', JSON.stringify(arr)); }
+
+    // Mostrar recientes bajo el form cuando foco en destino
+    const destInput = document.getElementById('destinationInput');
+    const destBox = document.getElementById('destinationSuggestions');
+    destInput.addEventListener('focus', ()=>{
+      const recent = getRecent(); if(recent.length===0) return;
+      destBox.innerHTML = '';
+      recent.forEach(r=>{ const d = document.createElement('div'); d.className='suggest-item'; d.textContent = r.dest + ' ← ' + r.origin; d.addEventListener('click', ()=>{ document.getElementById('originInput').value = r.origin; destInput.value = r.dest; destBox.innerHTML=''; }); destBox.appendChild(d); });
+    });
+
+    document.getElementById('searchForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const origin = document.getElementById('originInput').value.trim();
+      const dest = document.getElementById('destinationInput').value.trim();
+      const out = document.querySelector('input[type=date]')?.value || '';
+      const ret = document.querySelectorAll('input[type=date]')[1]?.value || '';
+      const pax = document.querySelector('.booking-surface select')?.value || '';
+
+      if(!origin || !dest){ alert('Por favor completa Origen y Destino.'); return; }
+
+      pushRecent({ origin, dest, out, ret, pax, date: Date.now() });
+      const qs = new URLSearchParams({ origin, dest, out, ret, pax }).toString();
+      window.location.href = 'destinos.html?' + qs;
+    });
+  })();
+  </script>
 </body>
 </html>

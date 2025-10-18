@@ -1,0 +1,63 @@
+{
+  "destinations": [
+    {
+      "id": "paris",
+      "name": "París",
+      "tag": "Cultural",
+      "tags": ["París","Europa","Romántico"],
+      "img": "Images/paris.jpg",
+      "airports": [ {"code":"CDG","name":"Charles de Gaulle"} ],
+      "price": { "adult": 120, "child": 80 },
+      "availableDates": [
+        "2025-10-20",
+        "2025-10-24",
+        "2025-11-02"
+      ]
+    },
+    {
+      "id": "roma",
+      "name": "Roma",
+      "tag": "Historia",
+      "tags": ["Roma","Italia"],
+      "img": "Images/rome.jpg",
+      "airports": [ {"code":"FCO","name":"Fiumicino"} ],
+      "price": { "adult": 100, "child": 70 },
+      "availableDates": ["2025-10-22","2025-10-30"]
+    },
+    {
+      "id": "tokio",
+      "name": "Tokio",
+      "tag": "Urbano",
+      "tags": ["Tokio","Asia"],
+      "img": "Images/tokio.jpg",
+      "airports": [ {"code":"NRT","name":"Narita"}, {"code":"HND","name":"Haneda"} ],
+      "price": { "adult": 200, "child": 140 },
+      "availableDates": ["2025-11-10","2025-11-18"]
+    },
+    {
+      "id": "grecia",
+      "name": "Grecia",
+      "tag": "Islas",
+      "tags": ["Grecia","Islas"],
+      "img": "Images/grecia.jpg",
+      "airports": [ {"code":"ATH","name":"Eleftherios Venizelos"} ],
+      "price": { "adult": 150, "child": 100 },
+      "availableDates": ["2025-10-25","2025-11-05"]
+    },
+    {
+      "id": "peru",
+      "name": "Perú",
+      "tag": "Aventura",
+      "tags": ["Perú","Aventura"],
+      "img": "Images/peru.jpg",
+      "airports": [ {"code":"LIM","name":"Jorge Chávez"} ],
+      "price": { "adult": 130, "child": 90 },
+      "availableDates": ["2025-10-28","2025-11-02"]
+    }
+  ],
+  "deals": [
+    { "id":"grecia-deal","title":"Islas Griegas 7D/6N","price":899,"img":"Images/grecia.jpg","tags":["Grecia","Islas"], "availableDates":["2025-10-25"] },
+    { "id":"dubai-deal","title":"Dubái de Lujo 5D/4N","price":1099,"img":"Images/dubai.jpg","tags":["Dubái","Lujo"], "availableDates":["2025-11-15"] },
+    { "id":"peru-deal","title":"Aventura en Perú 6D/5N","price":799,"img":"Images/peru.jpg","tags":["Perú","Aventura"], "availableDates":["2025-10-28"] }
+  ]
+}

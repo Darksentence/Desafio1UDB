@@ -155,6 +155,14 @@
                                 </div>
                             </div>
                         </section>
+                        <section class="search-results py-4">
+                            <div class="container">
+                                <h3 id="searchSummary"></h3>
+                                <div id="suggestedDestinations" class="row g-4 mt-3"></div>
+                                <h4 class="mt-4">Ofertas relacionadas</h4>
+                                <div id="relatedDeals" class="row g-4 mt-2"></div>
+                            </div>
+                        </section>
         </main>
     <footer class="footer">
     <div class="container">
@@ -200,5 +208,83 @@
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/parallaxx-js/dist/parallax.js"></script>
 <script src="js/navbar.js"></script>
+<script>
+(function(){
+    const params = new URLSearchParams(window.location.search);
+    const origin = params.get('origin') || '';
+    const dest = params.get('dest') || '';
+    const out = params.get('out') || '';
+
+    const summaryEl = document.getElementById('searchSummary');
+    if(summaryEl && (origin || dest)){
+        summaryEl.textContent = `Resultados para: ${origin} → ${dest} ${out ? ' (Salida: '+out+')' : ''}`;
+    }
+
+        // Cargar data/destinos.json y luego sugerir
+        fetch('data/destinos.json').then(r=>r.json()).then(j=>{
+            const allDest = j.destinations || [];
+            const deals = j.deals || [];
+            const query = (dest || origin).toLowerCase();
+
+            const suggested = allDest.filter(d=> d.name.toLowerCase().includes(query)).slice(0,6);
+            const suggestedEl = document.getElementById('suggestedDestinations');
+            if(suggestedEl){
+                if(suggested.length===0){
+                    suggestedEl.innerHTML = '<p>No se encontraron sugerencias exactas. Te recomendamos ver nuestras ofertas.</p>';
+                } else {
+                    suggestedEl.innerHTML = suggested.map(d=>`
+                        <div class="col-12 col-sm-6 col-lg-4">
+                            <a class="dest-card" href="#">
+                                <img src="${d.img}" alt="${d.name}" />
+                                <span class="badge">${d.tag}</span>
+                                <div class="dest-overlay"><h3>${d.name}</h3></div>
+                            </a>
+                        </div>
+                    `).join('');
+                }
+            }
+
+            const related = deals.filter(de => de.tags.some(t=> t.toLowerCase().includes(query)));
+            const relatedEl = document.getElementById('relatedDeals');
+            if(relatedEl){
+                if(related.length===0){
+                    relatedEl.innerHTML = deals.map(d=> `
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="deal-card h-100">
+                                <img src="${d.img}" alt="${d.title}" />
+                                <div class="deal-body">
+                                    <h3 class="deal-title">${d.title}</h3>
+                                    <p class="deal-meta">Oferta relacionada</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="price">$${d.price}</span>
+                                        <a href="deals.html" class="btn btn-sm btn-warning rounded-pill">Reservar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `).join('');
+                } else {
+                    relatedEl.innerHTML = related.map(d=> `
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="deal-card h-100">
+                                <img src="${d.img}" alt="${d.title}" />
+                                <div class="deal-body">
+                                    <h3 class="deal-title">${d.title}</h3>
+                                    <p class="deal-meta">Oferta relacionada</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="price">$${d.price}</span>
+                                        <a href="deals.html" class="btn btn-sm btn-warning rounded-pill">Reservar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `).join('');
+                }
+            }
+        }).catch(()=>{ /* si falla, mantener comportamiento anterior */ });
+
+})();
+</script>
+<script src="js/actions.js"></script>
 </body>
 </html>

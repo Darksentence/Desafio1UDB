@@ -58,12 +58,12 @@
       <span class="text-uppercase text-whitefw-bold">Cosmos travel</span>
       <h1 class="mb-4 mt-2 fw-bold">Una nueva forma de viajar</h1>
   <div class="d-flex justify-content-center align-items-center flex-wrap gap-2">
-        <form action="#produk" role="search" onsubmit="return false;" class="pill-yellow d-flex align-items-center" style="height: calc(2em + 1rem);">
-          <input type="search" name="q" placeholder="Adonde quieres ir..." aria-label="Buscar" class="border-0 bg-transparent text-black" style="outline: none;">
+        <form id="calendarSearchForm" action="#produk" role="search" onsubmit="return false;" class="pill-yellow d-flex align-items-center" style="height: calc(2em + 1rem);">
+          <input id="calendarSearchInput" type="search" name="q" placeholder="Adonde quieres ir..." aria-label="Buscar" class="border-0 bg-transparent text-black" style="outline: none;">
         </form>
-  <a href="#contact" class="btn btn-outline-warning btn-lg rounded-pill px-5 py-2">
+  <button id="calendarSearchBtn" class="btn btn-outline-warning btn-lg rounded-pill px-5 py-2" type="button">
         Buscar Viajes
-        </a>
+        </button>
       </div>
     </div>
   </div>
@@ -269,75 +269,120 @@
             closeBtn.addEventListener('click', ()=> modal.style.display = 'none');
             window.addEventListener('click', e=>{ if(e.target === modal) modal.style.display = 'none'; });
 
-                        document.getElementById('bookingForm').addEventListener('submit', function(e){
-                                e.preventDefault();
-                                const form = this;
-                                const dest = form.destination.value;
-                                const date = form.date.value; // ISO YYYY-MM-DD
-                                const name = form.name.value;
-                                const email = form.email.value;
-                                const adults = Number(form.adults.value) || 0;
-                                const children = Number(form.children.value) || 0;
-                                const people = adults + children;
-                                const includeHotel = form.includeHotel.checked;
+            document.getElementById('bookingForm').addEventListener('submit', function(e){
+                e.preventDefault();
+                const form = this;
+                const dest = form.destination.value;
+                const date = form.date.value; // ISO YYYY-MM-DD
+                const name = form.name.value;
+                const email = form.email.value;
+                const adults = Number(form.adults.value) || 0;
+                const children8 = Number(form.children8.value) || 0;
+                const childrenUnder8 = Number(form.childrenUnder8.value) || 0;
+                const children = children8 + childrenUnder8;
+                const people = adults + children;
+                const includeHotel = form.includeHotel.checked;
 
-                              
-                                const prices = { 'París':{adult:80, child:50}, 'Roma':{adult:100, child:70}, 'Tokio':{adult:200, child:140}, 'Grecia':{adult:150, child:100} };
-                                const hotelPerPerson = 50; 
+                const prices = { 'París':{adult:80, child:50}, 'Roma':{adult:100, child:70}, 'Tokio':{adult:200, child:140}, 'Grecia':{adult:150, child:100}, 'Perú':{adult:130, child:90} };
+                const hotelPerPerson = 50;
 
-                                const priceInfo = prices[dest] || {adult:85, child:40};
-                                const subtotal = priceInfo.adult * adults + priceInfo.child * children;
-                                const hotelCost = includeHotel ? hotelPerPerson * people : 0;
-                                const total = subtotal + hotelCost;
+                const priceInfo = prices[dest] || {adult:85, child:40};
+                const subtotal = priceInfo.adult * adults + priceInfo.child * children;
+                const hotelCost = includeHotel ? hotelPerPerson * people : 0;
+                const total = subtotal + hotelCost;
 
-                                const orderId = 'ORD-' + Date.now().toString().slice(-8);
+                const orderId = 'ORD-' + Date.now().toString().slice(-8);
 
-                                
-                                let displayDate = date;
-                                try{
-                                        const d = new Date(date + 'T00:00:00');
-                                        displayDate = d.toLocaleDateString('es-ES', {year:'numeric', month:'long', day:'numeric'});
-                                }catch(err){ }
+                let displayDate = date;
+                try{
+                    const d = new Date(date + 'T00:00:00');
+                    displayDate = d.toLocaleDateString('es-ES', {year:'numeric', month:'long', day:'numeric'});
+                }catch(err){ }
 
-                                
-                                const invoiceHtml = `
-                                        <span class="close">&times;</span>
-                                        <div class="invoice">
-                                            <h3>Factura / Orden</h3>
-                                            <p><strong>Orden:</strong> ${orderId}</p>
-                                            <p><strong>Fecha de reserva:</strong> ${displayDate}</p>
-                                            <p><strong>Destino:</strong> ${dest}</p>
-                                            <p><strong>Cliente:</strong> ${name} &lt;${email}&gt;</p>
-                                                                    <table class="invoice-table">
-                                                                        <tr><td>Adultos</td><td>${adults}</td></tr>
-                                                                        <tr><td>Niños</td><td>${children}</td></tr>
-                                                                        <tr><td>Precio por adulto</td><td>$${priceInfo.adult.toFixed(2)}</td></tr>
-                                                                        <tr><td>Precio por niño</td><td>$${priceInfo.child.toFixed(2)}</td></tr>
-                                                                        <tr><td>Subtotal</td><td>$${subtotal.toFixed(2)}</td></tr>
-                                                                        <tr><td>Incluye hotel</td><td>${includeHotel ? 'Sí' : 'No'}</td></tr>
-                                                                        <tr class="total-row"><td>Total</td><td>$${total.toFixed(2)}</td></tr>
-                                                                    </table>
-                                            <div class="invoice-actions">
-                                                <button id="printInvoice" class="sbm-btn">Imprimir / Descargar</button>
-                                                <button id="closeInvoice" class="sbm-btn">Cerrar</button>
-                                            </div>
-                                            <p class="small">Esta es una confirmación automática de la reserva. Esto es una demostración.</p>
-                                        </div>
-                                `;
+                const invoiceHtml = `
+                    <span class="close">&times;</span>
+                    <div class="invoice">
+                      <h3>Factura / Orden</h3>
+                      <p><strong>Orden:</strong> ${orderId}</p>
+                      <p><strong>Fecha de reserva:</strong> ${displayDate}</p>
+                      <p><strong>Destino:</strong> ${dest}</p>
+                      <p><strong>Cliente:</strong> ${name} &lt;${email}&gt;</p>
+                                  <table class="invoice-table">
+                                    <tr><td>Adultos</td><td>${adults}</td></tr>
+                                    <tr><td>Niños (mayores de 8)</td><td>${children8}</td></tr>
+                                    <tr><td>Niños (menores de 8)</td><td>${childrenUnder8}</td></tr>
+                                    <tr><td>Precio por adulto</td><td>$${priceInfo.adult.toFixed(2)}</td></tr>
+                                    <tr><td>Precio por niño</td><td>$${priceInfo.child.toFixed(2)}</td></tr>
+                                    <tr><td>Subtotal</td><td>$${subtotal.toFixed(2)}</td></tr>
+                                    <tr><td>Incluye hotel</td><td>${includeHotel ? 'Sí' : 'No'}</td></tr>
+                                    <tr class="total-row"><td>Total</td><td>$${total.toFixed(2)}</td></tr>
+                                  </table>
+                      <div class="invoice-actions">
+                        <button id="printInvoice" class="sbm-btn">Imprimir / Descargar</button>
+                        <button id="closeInvoice" class="sbm-btn">Cerrar</button>
+                      </div>
+                      <p class="small">Esta es una confirmación automática de la reserva. Esto es una demostración.</p>
+                    </div>
+                `;
 
-                                const content = modal.querySelector('.modal-content');
-                                content.innerHTML = invoiceHtml;
+                const content = modal.querySelector('.modal-content');
+                content.innerHTML = invoiceHtml;
 
-                               r
-                                content.querySelector('.close').addEventListener('click', ()=> modal.style.display = 'none');
-                                content.querySelector('#closeInvoice').addEventListener('click', ()=> modal.style.display = 'none');
-                                content.querySelector('#printInvoice').addEventListener('click', ()=> {
-                                        PDF
-                                        window.print();
-                                });
+                // Función para guardar orden en localStorage
+                function saveOrder(order){
+                  try{
+                    const existing = JSON.parse(localStorage.getItem('orders')||'[]');
+                    existing.push(order);
+                    localStorage.setItem('orders', JSON.stringify(existing));
+                    return true;
+                  }catch(e){ return false; }
+                }
 
-                                form.reset();
-                        });
+                // Eventos
+                content.querySelector('.close').addEventListener('click', ()=> modal.style.display = 'none');
+                content.querySelector('#closeInvoice').addEventListener('click', ()=> modal.style.display = 'none');
+                content.querySelector('#printInvoice').addEventListener('click', ()=> { window.print(); });
+
+                // Añadir botón para guardar orden y descargar JSON
+                const saveBtn = document.createElement('button');
+                saveBtn.className = 'sbm-btn';
+                saveBtn.textContent = 'Guardar orden (simulado)';
+                saveBtn.style.marginLeft = '8px';
+                saveBtn.addEventListener('click', ()=>{
+                  const order = {
+                    id: orderId,
+                    date: date,
+                    displayDate: displayDate,
+                    destination: dest,
+                    name: name,
+                    email: email,
+                    adults: adults,
+                    children8: children8,
+                    childrenUnder8: childrenUnder8,
+                    includeHotel: includeHotel,
+                    subtotal: subtotal,
+                    hotelCost: hotelCost,
+                    total: total,
+                    createdAt: Date.now()
+                  };
+                  const ok = saveOrder(order);
+                  if(ok){
+                    const blob = new Blob([JSON.stringify(order, null, 2)], {type:'application/json'});
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = orderId + '.json';
+                    document.body.appendChild(a);
+                    a.click();
+                    a.remove();
+                    URL.revokeObjectURL(url);
+                    alert('Orden guardada (simulado) y descargada.');
+                  } else alert('Error al guardar la orden.');
+                });
+                content.querySelector('.invoice-actions').appendChild(saveBtn);
+
+                form.reset();
+            });
 
             render();
         })();
@@ -345,5 +390,6 @@
         <script src="https://cdn.jsdelivr.net/npm/parallaxx-js/dist/parallax.js"></script>
         <script src="js/panel.js"></script>
         <script src="js/navbar.js"></script>
+  <script src="js/actions.js"></script>
 </body>
 </html>
