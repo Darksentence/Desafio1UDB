@@ -452,7 +452,6 @@ section {
 
 h1 {
   font-size: 3rem;
-  background-color: rgb(0, 0, 0, 0.6);
   padding: 0.5rem 1rem;
 }
 
@@ -1245,7 +1244,7 @@ a.mobil-vr {
 /*** INDEX ***/
 
 .new-travel {
-  background-image: url('/root/Images/rome.jpg');
+  background-image: url('../Images/rome.jpg');
 }
 
 
@@ -1253,13 +1252,13 @@ a.mobil-vr {
 /*****CALENDARIO******/
 
 .calen {
-  background-image: url('/root/Images/paris2.jpg');
+  background-image: url('../Images/paris2.jpg');
 }
 
 /*****EXPERIENCIAS******/
 
 .exp {
-  background-image: url('/root/Images/coliseo.jpg');
+  background-image: url('../Images/coliseo.jpg');
 }
 
 /*****DESTINOS******/
@@ -1273,7 +1272,7 @@ a.mobil-vr {
 }
 
 .dest {
-  background-image: url('/root/Images/grecia.jpg');
+  background-image: url('../Images/grecia.jpg');
 }
 
 .dest-contenido-txt {
@@ -1410,7 +1409,7 @@ a.mobil-vr {
 /*****ABOUT******/
 
 .about {
-  background-image: url('/root/Images/londres.jpg');
+  background-image: url('../Images/londres.jpg');
 }
 
 .all-rights {
@@ -1457,7 +1456,7 @@ a.mobil-vr {
 /*****CONTACTO******/
 
 .cont {
-  background-image: url('/root/Images/landscape.jpg');
+  background-image: url('../Images/landscape.jpg');
 }
 
 .form-container {
@@ -2084,7 +2083,7 @@ input {
   height: 420px;
   border: 0;
 }
-
+titulo 
 .footer {
   background: linear-gradient(to right, #1a1c20, #2c3e50);
   color: #ffffff;
@@ -2563,7 +2562,6 @@ section {
 
 h1 {
   font-size: 3rem;
-  background-color: rgb(0, 0, 0, 0.6);
   padding: 0.5rem 1rem;
 }
 
@@ -2886,7 +2884,7 @@ a.mobil-vr {
 /*** INDEX ***/
 
 .new-travel {
-  background-image: url('/root/Images/rome.jpg');
+  background-image: url('../Images/rome.jpg');
 }
 
 
@@ -2894,13 +2892,13 @@ a.mobil-vr {
 /*****CALENDARIO******/
 
 .calen {
-  background-image: url('/root/Images/paris2.jpg');
+  background-image: url('../Images/paris2.jpg');
 }
 
 /*****EXPERIENCIAS******/
 
 .exp {
-  background-image: url('/root/Images/coliseo.jpg');
+  background-image: url('../Images/coliseo.jpg');
 }
 
 /*****DESTINOS******/
@@ -2914,7 +2912,7 @@ a.mobil-vr {
 }
 
 .dest {
-  background-image: url('/root/Images/grecia.jpg');
+  background-image: url('../Images/grecia.jpg');
 }
 
 .dest-contenido-txt {
@@ -2968,19 +2966,19 @@ a.mobil-vr {
 /*****DEALS******/
 
 .deals {
-  background-image: url('/root/Images/tokio.jpg');
+  background-image: url('../Images/tokio.jpg');
 }
 
 /*****ABOUT******/
 
 .about {
-  background-image: url('/root/Images/londres.jpg');
+  background-image: url('../Images/londres.jpg');
 }
 
 /*****CONTACTO******/
 
 .cont {
-  background-image: url('/root/Images/landscape.jpg');
+  background-image: url('../Images/landscape.jpg');
 }
 
 .form-container {
