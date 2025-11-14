@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle de la Oferta</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/parallaxx-js/dist/parallax.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        referrerpolicy="no-referrer" />
+
+    <style>
+        .detail-header {
+            width: 100%;
+            height: 60vh;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hamburger-menu" id="hamburger-menu">
+        <div class="menu-bar1"></div>
+        <div class="menu-bar2"></div>
+        <div class="menu-bar3"></div>
+    </div>
+
+    <div id="overlay" class="overlay overlay-slide-left">
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="calendario.html">Calendario</a></li>
+                <li><a href="experiencias.html">Experiencias</a></li>
+                <li><a href="destinos.html">Destinos</a></li>
+                <li><a href="deals.html">Deals</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <p class="logo">NEW TRAVEL</p>
+
+    <main>
+        <div class="hero-dinamico" id="detail-hero">
+            <div class="hero-content">
+                <p class="subtitulo" id="detail-meta">Cargando...</p>
+                <h1 class="titulo" id="detail-title">Cargando...</h1>
+            </div>
+        </div>
+
+        <div class="container my-5">
+            <div class="row g-5">
+
+                <div class="col-lg-8">
+                    <h2 class="display-6 fw-bold mb-6 mt-2"> Descripción:</h2>
+                    <p class="lead" id="detail-description">Cargando detalles...</p>
+                    <hr class="my-5">
+                    <h2 class="display-6 fw-bold mb-4 mt-5"> Qué Incluye:</h2>
+                    <ul id="detail-includes" class="list-unstyled fa-ul">
+                    </ul>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card shadow-sm sticky-top" style="top: 2rem;">
+                        <div class="card-body p-4">
+                            <h3 class="card-title mb-0">Reserva tu Viaje</h3>
+                            <hr>
+                            <p class="mb-1">Desde</p>
+                            <p class="fs-2 fw-bold text-warning" id="detail-price">$0</p>
+                            <p class="small">Impuestos y tasas incluidos. Precio por persona.</p>
+                            <a href="contacto.html" class="btn btn-warning btn-lg w-100 rounded-pill mt-3">
+                                Solicitar Reserva
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </main>
+
+    <footer class="footer">
+    </footer>
+
+    <script src="js/navbar.js"></script>
+    <script src="js/deal.js"></script>
+</body>
+
+</html>

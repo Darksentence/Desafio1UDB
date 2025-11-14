@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Promociones</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link rel="stylesheet" href="CSS/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/parallaxx-js/dist/parallax.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        referrerpolicy="no-referrer" />
 </head>
-<body>
-<!-- Shared navbar (hamburger + overlay) -->
-<div class="hamburger-menu" id="hamburger-menu">
-    <div class="menu-bar1"></div>
-    <div class="menu-bar2"></div>
-    <div class="menu-bar3"></div>
-</div>
 
-<div id="overlay" class="overlay overlay-slide-left">
+<body>
+    <!-- Shared navbar (hamburger + overlay) -->
+    <div class="hamburger-menu" id="hamburger-menu">
+        <div class="menu-bar1"></div>
+        <div class="menu-bar2"></div>
+        <div class="menu-bar3"></div>
+    </div>
+
+    <div id="overlay" class="overlay overlay-slide-left">
         <nav>
             <ul>
                 <li><a href="index.html">Inicio</a></li>
@@ -27,9 +34,9 @@
                 <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </nav>
-</div>
+    </div>
 
-<p class="logo">NEW TRAVEL</p> <!-- logo simple sin efectos -->
+    <p class="logo">NEW TRAVEL</p> <!-- logo simple sin efectos -->
 
     <main>
         <div class="deals hero"> <!-- cabecera de promo -->
@@ -42,120 +49,112 @@
             <div class="deals-contenido-txt">
                 <h1>Promociones</h1>
                 <p class="tagline">Vuelos en oferta y promociones de último minuto</p>
-                <p class="deals-txt" >Tenemos el viaje que mejor se adapta a ti. Contamos con excelentes promociones a los mejores destinos para tus vacaciones.</p>
+                <p class="deals-txt">Tenemos el viaje que mejor se adapta a ti. Contamos con excelentes promociones a
+                    los mejores destinos para tus vacaciones.</p>
             </div>
-            <div class="deals-galeria">
-                <div class="div-card">
-                    <div class="deals-img" style="background-image: url('Images/miami.jpg');"></div>
-                    
-                    <div class="deals-info">
-                    <span class="deals-titulo">Semana en Miami</span>
-                    <span class="deals-precio">Desde: $545</span>
-                    </div>
-                    
-                    <a class="deals-btn" href="contacto.html">Ver más</a>
-                </div>
+            <section class="featured-deals  py-5">
+    <div class="container">
+        <h2 class="section-title mb-4">Ofertas destacadas</h2>
+        <div class="row g-4">
 
-                <div class="div-card">
-                    <div class="deals-img" style="background-image: url('Images/rio2.jpg');"></div>
-                    
-                    <div class="deals-info">
-                    <span class="deals-titulo">Fin de Año en Rio de Janeiro</span>
-                    <span class="deals-precio">Desde: $1,999</span>
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="deal-card h-100">
+                    <img src="Images/grecia.jpg" alt="Grecia" />
+                    <div class="deal-body">
+                        <h3 class="deal-title">Islas Griegas 7D/6N</h3>
+                        <p class="deal-meta">Vuelo + Hotel 4★ · Desayuno</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="price">$899</span>
+                            <a href="deal-detail.html?id=grecia" class="btn btn-sm btn-warning rounded-pill">Ver Detalle</a>
+                        </div>
                     </div>
-                    
-                    <a class="deals-btn" href="contacto.html">Ver más</a>
-                </div>
-
-                <div class="div-card">
-                    <div class="deals-img" style="background-image: url('Images/vietnam.jpg');"></div>
-                    
-                    <div class="deals-info">
-                    <span class="deals-titulo">Vietnam en grupo</span>
-                    <span class="deals-precio">Desde: $1,200</span>
-                    </div>
-                    
-                    <a class="deals-btn" href="contacto.html">Ver más</a>
-                </div>
-
-                <div class="div-card">
-                    <div class="deals-img" style="background-image: url('Images/costa\ rica.jpg');"></div>
-                    
-                    <div class="deals-info">
-                    <span class="deals-titulo">Csota Rica Express</span>
-                    <span class="deals-precio">Desde: $240</span>
-                    </div>
-                    
-                    <a class="deals-btn" href="contacto.html">Ver más</a>
-                </div>
-
-                <div class="div-card">
-                    <div class="deals-img" style="background-image: url('Images/barcelona.jpg');"></div>
-                    
-                    <div class="deals-info">
-                    <span class="deals-titulo">Navidad en Barcelona</span>
-                    <span class="deals-precio">Desde: $1,440</span>
-                    </div>
-                    
-                    <a class="deals-btn" href="contacto.html">Ver más</a>
-                </div>
-
-                <div class="div-card">
-                    <div class="deals-img" style="background-image: url('Images/londres2.jpg');"></div>
-                    
-                    <div class="deals-info">
-                    <span class="deals-titulo">Año Nuevo en Londrés</span>
-                    <span class="deals-precio">Desde: $1,525</span>
-                    </div>
-                    
-                    <a class="deals-btn" href="contacto.html">Ver más</a>
                 </div>
             </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="deal-card h-100">
+                    <img src="Images/dubai.jpg" alt="Dubái" />
+                    <div class="deal-body">
+                        <h3 class="deal-title">Dubái de Lujo 5D/4N</h3>
+                        <p class="deal-meta">City tour · Safari en el desierto</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="price">$1099</span>
+                            <a href="deal-detail.html?id=dubai" class="btn btn-sm btn-warning rounded-pill">Ver Detalle</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="deal-card h-100">
+                    <img src="Images/peru.jpg" alt="Perú" />
+                    <div class="deal-body">
+                        <h3 class="deal-title">Aventura en Perú 6D/5N</h3>
+                        <p class="deal-meta">Cusco · Machu Picchu · Traslados</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="price">$799</span>
+                            <a href="deal-detail.html?id=peru" class="btn btn-sm btn-warning rounded-pill">Ver Detalle</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+    </div>
+</section>
         </div>
     </main>
     <footer class="footer">
-    <div class="container">
-        <div class="row align-items-start">
-            <div class="col-lg-4 footer-section">
-                <div class="footer-logo">Visítanos</div>
-                <p class="footer-about">Encuéntranos en nuestra oficina o síguenos en redes.</p>
-                <div class="social-links">
-                    <a href="#" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
-                    <a href="#" class="social-icon" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
-                    <a href="#" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
-                    <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+        <div class="container">
+            <div class="row align-items-start">
+                <div class="col-lg-4 footer-section">
+                    <div class="footer-logo">Visítanos</div>
+                    <p class="footer-about">Encuéntranos en nuestra oficina o síguenos en redes.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"
+                                aria-hidden="true"></i></a>
+                        <a href="#" class="social-icon" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"
+                                aria-hidden="true"></i></a>
+                        <a href="#" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"
+                                aria-hidden="true"></i></a>
+                        <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"
+                                aria-hidden="true"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 footer-section">
+                    <h5>Ubicación</h5>
+                    <div class="footer-map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1627.9934186087344!2d-89.71177898263399!3d13.956062473198967!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f62950005c33ce9%3A0x510b4d68709a540b!2sPeor%20es%20nada!5e0!3m2!1ses-419!2sus!4v1760313449784!5m2!1ses-419!2sus"
+                            style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 footer-section">
+                    <h5>Support</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Contact Support</a></li>
+                    </ul>
                 </div>
             </div>
-
-            <div class="col-lg-4 footer-section">
-                <h5>Ubicación</h5>
-                <div class="footer-map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1627.9934186087344!2d-89.71177898263399!3d13.956062473198967!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f62950005c33ce9%3A0x510b4d68709a540b!2sPeor%20es%20nada!5e0!3m2!1ses-419!2sus!4v1760313449784!5m2!1ses-419!2sus" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-            </div>
-
-            <div class="col-lg-4 footer-section">
-                <h5>Support</h5>
-                <ul class="footer-links">
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Help Center</a></li>
+            <div class="footer-bottom">
+                <ul class="footer-bottom-links">
                     <li><a href="#">Privacy Policy</a></li>
                     <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Contact Support</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
                 </ul>
+                <p>© 2025 NEW TRAVEL. All rights reserved.</p>
             </div>
         </div>
-        <div class="footer-bottom">
-            <ul class="footer-bottom-links">
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms of Service</a></li>
-                <li><a href="#">Cookie Policy</a></li>
-            </ul>
-            <p>© 2025 NEW TRAVEL. All rights reserved.</p>
-        </div>
-    </div>
-</footer>
-<script src="js/navbar.js"></script>
-<script src="js/actions.js"></script>
+    </footer>
+    <script src="js/navbar.js"></script>
+    <script src="js/actions.js"></script>
 </body>
+
 </html>

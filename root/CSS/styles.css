@@ -2966,7 +2966,7 @@ a.mobil-vr {
 /*****DEALS******/
 
 .deals {
-  background-image: url('../Images/tokio.jpg');
+  background-image: url('../Images/coliseo.jpg');
 }
 
 /*****ABOUT******/
@@ -4126,4 +4126,77 @@ input {
   .trip-overview {
     --card-width: 240px;
   }
+}
+
+/* Pega esto al final de tu CSS/styles.css */
+
+.hero-dinamico {
+    height: 60vh; /* Puedes ajustar esta altura (ej. 50vh, 70vh) */
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    color: white; /* El texto del título será blanco */
+}
+
+/* Esta es la superposición oscura que va sobre la imagen 
+  para que el texto blanco sea fácil de leer.
+*/
+.hero-dinamico::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    /* CAMBIA ESTA LÍNEA: */
+    background-color: rgba(0, 0, 0, 0.7); /* Antes era 0.5 */
+}
+
+/* Tu clase .hero-content (que ya tenías)
+  se posiciona por encima del overlay.
+*/
+.hero-dinamico .hero-content {
+    position: relative; 
+    z-index: 2;
+    max-width: 800px;
+    padding: 1rem;
+}
+
+/* Asegurándonos que tus clases de título funcionen bien aquí
+*/
+.hero-dinamico .titulo {
+    font-size: 4.45rem; 
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Sombra para legibilidad */
+}
+
+.hero-dinamico .subtitulo {
+    font-size: 1.25rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* --- Estilos de Fuente para deal-detail.html (Versión 2) --- */
+
+/* Aumentamos el tamaño del título en el hero (este ya debería funcionar) */
+.hero-dinamico .titulo {
+    font-size: 4.2rem; 
+}
+
+/* Esta es la descripción principal */
+#detail-description {
+    font-size: 2.1rem !important; /* Hacemos la letra más grande y forzamos la regla */
+    line-height: 1.7;
+}
+
+/* Y la lista de 'Qué Incluye' */
+#detail-includes,
+#detail-includes li { /* Aplicamos la regla también a los <li> de dentro */
+    font-size: 2.1rem !important; /* Un poco más pequeña que la principal, pero grande */
+    line-height: 1.8;
 }
