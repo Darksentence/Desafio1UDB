@@ -39,38 +39,46 @@
                 <h1 class="titulo">RESOLVEMOS<br>TODAS TUS DUDAS</h1>
             </div>
         </div>
-        <div class="form-container">
-            <h2>Contáctanos</h2>
-            <form  method="post" action="#"> <!-- form básico -->
-                <div class="div-nombre-com">
-                    <div class="div-nombre"> 
-                        <label for="nombre">Nombre: *</label>
-                        <input type="text" id="nombre" name="nombre">
+        <div class="container-contacto-cont">
+            <div class="info-contacto">
+                <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+                <h2>Tienes dudas o preguntas?<br> Escribenos a: </h2>
+                <p><a href="contacto.html">clientes@newtravel.com</a></p>
+                <p>o llena este formulario</p>
+            </div>
+            <div class="form-container">
+                <h2>Contáctanos</h2>
+                <form  method="post" action="#"> <!-- form básico -->
+                    <div class="div-nombre-com">
+                        <div class="div-nombre"> 
+                            <label for="nombre">Nombre: *</label>
+                            <input type="text" id="nombre" name="nombre">
+                        </div>
+
+                        <div class="div-apellido">
+                            <label for="apellido">Apellidos: *</label>
+                            <input type="text" id="apellido" name="apellido">
+                        </div>
                     </div>
 
-                    <div class="div-apellido">
-                        <label for="apellido">Apellidos: *</label>
-                        <input type="text" id="apellido" name="apellido">
+                    <div class="div-tel">
+                        <label for="telefono">Número de teléfono: </label>
+                        <input type="tel" id="telefono" name="telefono">
                     </div>
-                </div>
 
-                <div class="div-tel">
-                    <label for="telefono">Número de teléfono: </label>
-                    <input type="tel" id="telefono" name="telefono">
-                </div>
+                    <div class="div-correo">
+                        <label for="correo">Correo electrónico: *</label>
+                        <input type="email" id="correo" name="correo">
+                    </div>
 
-                <div class="div-correo">
-                    <label for="correo">Correo electrónico: *</label>
-                    <input type="email" id="correo" name="correo">
-                </div>
+                    <div class="div-asunto">
+                        <label for="asunto">Asunto: *</label>
+                        <input type="text" id="asunto" name="asunto">
+                    </div>
 
-                <div class="div-asunto">
-                    <label for="asunto">Asunto: *</label>
-                    <input type="text" id="asunto" name="asunto">
-                </div>
-
-                <button type="submit" class="sbm-btn">Enviar</button>
-            </form>
+                    <button type="submit" class="sbm-btn">Enviar</button>
+                </form>
+            </div>
         </div>
         </main>
     <footer class="footer">

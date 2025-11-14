@@ -2977,14 +2977,66 @@ a.mobil-vr {
 
 /*****CONTACTO******/
 
+/*****CONTACTO******/
+
 .cont {
   background-image: url('../Images/landscape.jpg');
 }
 
+.container-contacto-cont {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  width: 80%;
+  margin: auto;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.info-contacto {
+  padding-top:7rem;
+}
+
+.info-contacto .fa-envelope {
+  color: #444 ;
+  font-size: 3.6rem;
+}
+
+.info-contacto p a{
+  color: #444;
+  text-transform: none;
+}
+
 .form-container {
-  max-width: 80%;
   margin: auto;
   padding-top: 3rem;
+}
+
+.form-container h2 {
+  color: #2d2d3a !important;
+  padding-bottom: 2rem;
+}
+
+.sbm-btn {
+  background-color: #CFB89E !important; 
+  color: #2d2d3a; 
+}
+
+@media (max-width: 767px) {
+  .container-contacto-cont {
+    flex-direction: column;
+    gap: 20px;
+    width: 90%;
+  }
+
+  .form-container {
+    width: 100%;
+  }
+
+  .info-contacto {
+    padding-top: 0;
+    text-align: center;
+  }
 }
 
 /* Estilos del calendario */
