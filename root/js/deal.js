@@ -26,6 +26,63 @@ const dealData = {
         image: 'Images/peru.jpg',
         description: 'Embárcate en una aventura inolvidable al corazón del Imperio Inca. Visitarás la histórica ciudad de Cusco, el Valle Sagrado y te maravillarás con la majestuosidad de Machu Picchu. Incluye todos los traslados, entradas y guías locales expertos.',
         includes: ['Vuelos internos (Lima-Cusco)', 'Alojamiento 5 noches', 'Visita a Machu Picchu', 'Entrada al Valle Sagrado', 'Guías locales expertos', 'Todos los traslados']
+    },
+    'paris': {
+        title: 'París Romántico',
+        meta: '4 Días / 3 Noches',
+        price: '$699',
+        image: 'Images/paris.jpg',
+        description: 'Pasea por las orillas del Sena, sube a la Torre Eiffel y disfruta de la gastronomía parisina. Ideal para escapadas románticas y viajes culturales.',
+        includes: ['Vuelo ida y vuelta', 'Alojamiento 3 noches en Hotel 4★', 'Desayuno diario', 'City tour por la ciudad', 'Seguro de viaje básico']
+    },
+    'rio': {
+        title: 'Río de Janeiro: Sol y Carnaval',
+        meta: '5 Días / 4 Noches',
+        price: '$749',
+        image: 'Images/rio3.jpg',
+        description: 'Playas icónicas como Copacabana e Ipanema, subida al Cristo Redentor y vida nocturna vibrante. Disfruta de ritmos, playas y cultura brasileña.',
+        includes: ['Vuelo ida y vuelta', 'Alojamiento 4 noches', 'Traslados aeropuerto-hotel', 'Visita al Cristo Redentor', 'Asistencia en destino']
+    }
+    ,
+    'roma': {
+        title: 'Roma Histórica',
+        meta: '4 Días / 3 Noches',
+        price: '$679',
+        image: 'Images/rome.jpg',
+        description: 'Pasea por el Coliseo, el Foro Romano y la Fontana di Trevi. Una escapada cargada de historia, gastronomía y arte.',
+        includes: ['Vuelo ida y vuelta', 'Alojamiento 3 noches en hotel céntrico', 'Desayuno diario', 'Entrada al Coliseo (salta fila)', 'Guía local en español']
+    },
+    'tokio': {
+        title: 'Tokio Moderno',
+        meta: '6 Días / 5 Noches',
+        price: '$1299',
+        image: 'Images/tokio.jpg',
+        description: 'Sumérgete en la mezcla única de tradición y futurismo: templos, gastronomía excepcional y barrios vibrantes como Shibuya y Akihabara.',
+        includes: ['Vuelo internacional', 'Alojamiento 5 noches', 'Japan Rail Pass (regional)', 'City tour con guía', 'Traslados aeropuerto-hotel']
+    },
+    'bali': {
+        title: 'Bali Esencial',
+        meta: '5 Días / 4 Noches',
+        price: '$749',
+        image: 'Images/bali.jpg',
+        description: 'Playas, templos y paisajes tropicales. Perfecto para relajarse, practicar surf y explorar la cultura balinesa.',
+        includes: ['Vuelo ida y vuelta', 'Alojamiento 4 noches', 'Traslado aeropuerto-hotel', 'Tour de templos y arrozales', 'Desayuno diario']
+    },
+    'argentina': {
+        title: 'Argentina: Patagonia y Buenos Aires',
+        meta: '8 Días / 7 Noches',
+        price: '$999',
+        image: 'Images/argentina.jpg',
+        description: 'Desde la vibrante capital hasta los paisajes de la Patagonia: cascadas, glaciares y cultura gaucha.',
+        includes: ['Vuelo internacional', 'Alojamiento 7 noches', 'Traslados internos', 'Excursión al glaciar', 'Desayuno diario']
+    },
+    'china': {
+        title: 'China Clásica',
+        meta: '7 Días / 6 Noches',
+        price: '$1199',
+        image: 'Images/china.jpg',
+        description: 'Visita la Gran Muralla, la Ciudad Prohibida y descubre la historia milenaria china con guías expertos.',
+        includes: ['Vuelo internacional', 'Alojamiento 6 noches', 'Desayunos', 'Entradas a monumentos', 'Guía en español']
     }
     // ... Agrega aquí tus otras ofertas con la misma estructura
 };
@@ -47,8 +104,24 @@ document.addEventListener('DOMContentLoaded', () => {
         document.title = data.title + " | NEW TRAVEL"; 
 
         // Rellena el Hero
-        // Esta es la línea clave para el fondo dinámico
-        document.getElementById('detail-hero').style.backgroundImage = `url(${data.image})`;
+        // Cargamos la imagen primero para evitar parpadeos y luego activamos la animación CSS
+        const heroEl = document.getElementById('detail-hero');
+        const placeholder = 'https://via.placeholder.com/1600x900?text=Imagen';
+        if (heroEl) {
+            heroEl.classList.remove('loaded');
+            const imgPre = new Image();
+            imgPre.src = data.image || placeholder;
+            imgPre.onload = () => {
+                heroEl.style.backgroundImage = `url(${data.image})`;
+                // pequeña demora para permitir transiciones
+                setTimeout(()=> heroEl.classList.add('loaded'), 60);
+            };
+            imgPre.onerror = () => {
+                heroEl.style.backgroundImage = `url(${placeholder})`;
+                heroEl.classList.add('loaded');
+            };
+        }
+
         document.getElementById('detail-title').textContent = data.title;
         document.getElementById('detail-meta').textContent = data.meta;
         
@@ -56,19 +129,36 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('detail-description').textContent = data.description;
         document.getElementById('detail-price').textContent = data.price;
         
-        // Rellena la lista de "includes"
+        // Rellena la lista de "includes" de manera accesible y robusta
         const includesList = document.getElementById('detail-includes');
-        includesList.innerHTML = ''; // Limpia la lista
-        
-        data.includes.forEach(item => {
-            const li = document.createElement('li');
-            li.classList.add('mb-2'); // Añade clase de Bootstrap para espaciado
-            
-            // Usamos Font Awesome (ya lo tienes cargado)
-            li.innerHTML = `<span class="fa-li"><i class="fa-solid fa-check text-warning"></i></span>${item}`;
-            
-            includesList.appendChild(li);
-        });
+        if (includesList) {
+            includesList.innerHTML = ''; // Limpia la lista
+
+            // Si no hay includes definidos, mostramos un mensaje alternativo
+            if (!Array.isArray(data.includes) || data.includes.length === 0) {
+                const li = document.createElement('li');
+                li.className = 'mb-2';
+                li.textContent = 'No se especificaron servicios incluidos para esta oferta.';
+                includesList.appendChild(li);
+            } else {
+                data.includes.forEach(item => {
+                    const li = document.createElement('li');
+                    li.className = 'mb-2 d-flex align-items-start'; // espaciado y alineado
+
+                    // Icono (Font Awesome) — marcado como decorativo para lectores de pantalla
+                    const icon = document.createElement('i');
+                    icon.className = 'fa-solid fa-check text-warning me-2';
+                    icon.setAttribute('aria-hidden', 'true');
+
+                    const spanText = document.createElement('span');
+                    spanText.textContent = item;
+
+                    li.appendChild(icon);
+                    li.appendChild(spanText);
+                    includesList.appendChild(li);
+                });
+            }
+        }
 
     } else {
         // Manejo de error si no se encuentra el ID

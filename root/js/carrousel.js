@@ -1,14 +1,21 @@
 "use strict";
 
-let next = document.querySelector(".next");
-let prev = document.querySelector(".prev");
+document.addEventListener('DOMContentLoaded', function () {
+  const next = document.querySelector('.next');
+  const prev = document.querySelector('.prev');
+  const slide = document.querySelector('.slide');
 
-next.addEventListener("click", function () {
-  let items = document.querySelectorAll(".item");
-  document.querySelector(".slide").appendChild(items[0]);
-});
+  if (next) {
+    next.addEventListener('click', function () {
+      const items = document.querySelectorAll('.item');
+      if (items.length && slide) slide.appendChild(items[0]);
+    });
+  }
 
-prev.addEventListener("click", function () {
-  let items = document.querySelectorAll(".item");
-  document.querySelector(".slide").prepend(items[items.length - 1]);
+  if (prev) {
+    prev.addEventListener('click', function () {
+      const items = document.querySelectorAll('.item');
+      if (items.length && slide) slide.prepend(items[items.length - 1]);
+    });
+  }
 });

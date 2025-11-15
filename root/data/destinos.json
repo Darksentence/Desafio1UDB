@@ -54,10 +54,26 @@
       "price": { "adult": 130, "child": 90 },
       "availableDates": ["2025-10-28","2025-11-02"]
     }
+    ,
+    {
+      "id": "rio",
+      "name": "Río de Janeiro",
+      "tag": "Playas",
+      "tags": ["Río","Brasil","Playas"],
+      "img": "Images/rio.jpg",
+      "airports": [ {"code":"GIG","name":"Galeão"} ],
+      "price": { "adult": 140, "child": 95 },
+      "availableDates": ["2025-11-05","2025-11-12"]
+    }
   ],
   "deals": [
     { "id":"grecia-deal","title":"Islas Griegas 7D/6N","price":899,"img":"Images/grecia.jpg","tags":["Grecia","Islas"], "availableDates":["2025-10-25"] },
     { "id":"dubai-deal","title":"Dubái de Lujo 5D/4N","price":1099,"img":"Images/dubai.jpg","tags":["Dubái","Lujo"], "availableDates":["2025-11-15"] },
+    { "id":"rio","title":"Aventura en Rio de janeiro 6D/5N","price":799,"img":"Images/rio.jpg","tags":["Río","Brasil","Playas"], "availableDates":["2025-11-05"] }
+    { "id":"peru-deal","title":"Aventura en Perú 6D/5N","price":799,"img":"Images/peru.jpg","tags":["Perú","Aventura"], "availableDates":["2025-10-28"] }
+    { "id":"peru-deal","title":"Aventura en Perú 6D/5N","price":799,"img":"Images/peru.jpg","tags":["Perú","Aventura"], "availableDates":["2025-10-28"] }
+    { "id":"peru-deal","title":"Aventura en Perú 6D/5N","price":799,"img":"Images/peru.jpg","tags":["Perú","Aventura"], "availableDates":["2025-10-28"] }
     { "id":"peru-deal","title":"Aventura en Perú 6D/5N","price":799,"img":"Images/peru.jpg","tags":["Perú","Aventura"], "availableDates":["2025-10-28"] }
   ]
+  
 }

@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+/***********************/
+/* RESET CSS */
+/***********************/
+
+* {
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  /* 
+    font-size: 10px; 
+    10px / 16px = 0.625 = 62.5%
+    Percentage of user's browser font-size setting
+  */
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+a:link,
+a:visited {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.3s;
+}
+
+/* HELPER CLASSES */
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/***********************/
+/* NAVIGATION MENU */
+/***********************/
+
+/* NAVIGATION MENU
+   NOTE: The overlay/nav styles were duplicated in this file. The canonical
+   overlay definition (using visibility/opacity for smooth transitions) is
+   located later in the stylesheet. Keeping a single source avoids conflicts.
+   See the overlay rules near the end of this file (search for
+   `.overlay.overlay-active`) for the active definitions.
+*/
+
+nav li:nth-of-type(7) {
+  background-color: #8b7355;
+}
+
+/* Highlight para fechas encontradas por búsqueda */
+.date-cell.highlight-search{
+  box-shadow: 0 0 0 3px rgba(255,193,7,0.25) inset;
+  border: 2px solid #ffc107;
+  background: linear-gradient(180deg, rgba(255,243,205,0.4), rgba(255,249,230,0.15));
+}
+
+/* Simple modal base (used para resultados y suscripción) */
+#resultsOverlay, #subscribeOverlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.45); display:flex; align-items:center; justify-content:center; z-index:1200;
+}
+#resultsBox, #subscribeBox { background: #fff; padding: 18px; border-radius:8px; max-width:720px; width:92%; max-height:80vh; overflow:auto; }
+
+/* Toast */
+.toast-msg { position: fixed; right: 18px; bottom: 18px; background: rgba(0,0,0,0.85); color: #fff; padding:10px 14px; border-radius:6px; z-index:1300; box-shadow:0 6px 20px rgba(0,0,0,0.2); }
+
+nav li:nth-of-type(5) {
+  background-color: #917a56;
+}
+
+nav li a {
+  letter-spacing: 0.15rem;
+  font-size: 1.4rem; /* reducido para caber mejor */
+  padding: 0.35rem 0.75rem;
+  display: inline-block;
+}
+
+nav li a:hover,
+nav li a:active {
+  transform: scale(1.2);
+}
+
+/***********************/
+/* NAV SLIDE IN ANIMATION */
+/***********************/
+
+.slide-in-1 {
+  animation: slide-in 0.4s linear 0.2s both;
+}
+
+.slide-in-2 {
+  animation: slide-in 0.4s linear 0.4s both;
+}
+
+.slide-in-3 {
+  animation: slide-in 0.4s linear 0.6s both;
+}
+
+.slide-in-4 {
+  animation: slide-in 0.4s linear 0.8s both;
+}
+
+.slide-in-5 {
+  animation: slide-in 0.4s linear 1s both;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+/***********************/
+/* NAV SLIDE OUT ANIMATION */
+/***********************/
+
+.slide-out-1 {
+  animation: slide-out 0.3s linear 0.5s both;
+}
+
+.slide-out-2 {
+  animation: slide-out 0.3s linear 0.4s both;
+}
+
+.slide-out-3 {
+  animation: slide-out 0.3s linear 0.3s both;
+}
+
+.slide-out-4 {
+  animation: slide-out 0.3s linear 0.2s both;
+}
+
+.slide-out-5 {
+  animation: slide-out 0.3s linear 0.1s both;
+}
+
+@keyframes slide-out {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* Generic slide-in/slide-out for overlay nav items (used by js/navbar.js) */
+.slide-in {
+  animation-name: slide-in-generic;
+  animation-duration: 360ms;
+  animation-fill-mode: both;
+  animation-timing-function: ease-out;
+}
+
+.slide-out {
+  animation-name: slide-out-generic;
+  animation-duration: 300ms;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in;
+}
+
+@keyframes slide-in-generic {
+  from {
+    transform: translateX(-30%) translateZ(0);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0) translateZ(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-out-generic {
+  from {
+    transform: translateX(0) translateZ(0);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateX(-30%) translateZ(0);
+    opacity: 0;
+  }
+}
+
+/***********************/
+/* HAMBURGER MENU ANIMATION */
+/***********************/
+
+.hamburger-menu {
+  position: fixed;
+  top: 1rem;
+  right: 2rem;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.menu-bar1,
+.menu-bar2,
+.menu-bar3 {
+  width: 3.5rem;
+  height: 0.2rem;
+  background-color: #fff;
+  margin: 0.8rem 0;
+  transition: 0.4s;
+  border-radius: 2px;
+  /* Black contour for visibility on light areas */
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.95),
+    /* crisp ring */
+    0 1px 2px rgba(0, 0, 0, 0.45);
+  /* soft lift */
+}
+
+.menu-bar2 {
+  width: 2rem;
+  margin-left: auto;
+}
+
+/* ROTATE FIRST BAR */
+.active .menu-bar1 {
+  transform: rotate(-45deg) translate(-0.7rem, 0.8rem);
+}
+
+/* FADE OUT SECOND BAR */
+.active .menu-bar2 {
+  opacity: 0;
+}
+
+/* ROTATE LAST BAR */
+.active .menu-bar3 {
+  transform: rotate(45deg) translate(-0.6rem, -0.8rem);
+}
+
+/***********************/
+/* SECTION */
+/***********************/
+
+section {
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  text-align: center;
+  color: #fff;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 250px;
+  /* 🔹 alto uniforme para todas las imágenes */
+  object-fit: cover;
+  object-position: center;
+  border-bottom: 2px solid #f1f1f1;
+  display: block;
+}
+... (backup file content written)

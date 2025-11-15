@@ -1,0 +1,250 @@
+/* ===== CHATBOT WIDGET ===== */
+
+.chatbot-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #dd84d6;
+  color: white;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 0 4px 12px rgba(221, 132, 214, 0.4);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chatbot-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(221, 132, 214, 0.6);
+}
+
+.chatbot-widget {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 380px;
+  max-height: 600px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.chatbot-widget.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.chatbot-header {
+  background: linear-gradient(135deg, #dd84d6 0%, #e58211 100%);
+  color: white;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.chatbot-header h4 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.chatbot-close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+
+.chatbot-close:hover {
+  transform: rotate(90deg);
+}
+
+.chatbot-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 300px;
+}
+
+.chatbot-message {
+  display: flex;
+  gap: 8px;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.chatbot-message p {
+  margin: 0;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 1.4;
+  max-width: 85%;
+}
+
+.bot-message p {
+  background-color: #f0f0f0;
+  color: #333;
+  align-self: flex-start;
+}
+
+.user-message p {
+  background-color: #dd84d6;
+  color: white;
+  align-self: flex-end;
+}
+
+.chatbot-faq {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  background-color: #f9f9f9;
+  border-top: 1px solid #eee;
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+.faq-btn {
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  background-color: white;
+  color: #333;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+  white-space: normal;
+}
+
+.faq-btn:hover {
+  background-color: #dd84d6;
+  color: white;
+  border-color: #dd84d6;
+  transform: translateX(4px);
+}
+
+/* Scrollbar styling */
+.chatbot-messages::-webkit-scrollbar,
+.chatbot-faq::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chatbot-messages::-webkit-scrollbar-track,
+.chatbot-faq::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+
+.chatbot-messages::-webkit-scrollbar-thumb,
+.chatbot-faq::-webkit-scrollbar-thumb {
+  background: #dd84d6;
+  border-radius: 3px;
+}
+
+.chatbot-messages::-webkit-scrollbar-thumb:hover,
+.chatbot-faq::-webkit-scrollbar-thumb:hover {
+  background: #e58211;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+  .chatbot-widget {
+    width: 90%;
+    max-width: 100%;
+    bottom: 80px;
+    left: 10px;
+    right: 10px;
+  }
+
+  .chatbot-messages {
+    max-height: 250px;
+  }
+
+  .chatbot-faq {
+    max-height: 200px;
+  }
+
+  .chatbot-toggle {
+    bottom: 15px;
+    right: 15px;
+    width: 56px;
+    height: 56px;
+    font-size: 24px;
+  }
+
+  .whatsapp-button {
+    bottom: 80px;
+    width: 56px;
+    height: 56px;
+    font-size: 24px;
+  }
+}
+
+/* ===== WHATSAPP BUTTON ===== */
+
+.whatsapp-button {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #25D366;
+  color: white;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 998;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.whatsapp-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.6);
+}
