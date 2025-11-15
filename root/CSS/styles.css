@@ -2628,8 +2628,15 @@ a.mobil-vr {
 
   /* Ajuste para Hero 1: subir el texto en pantallas pequeñas */
   #hero-1 .text-center {
-    margin-top: -30px;
-    /* ajusta según tu preferencia */
+    margin-top: -90px;
+    padding-top: 0.25rem !important;
+    padding-bottom: 0.75rem !important;
+  }
+}
+
+@media (max-width: 575px) {
+  #hero-1 .text-center {
+    margin-top: -120px;
   }
 }
 
@@ -2993,7 +3000,23 @@ a.mobil-vr {
 }
 
 /* Autocomplete suggestions */
-.suggestions{ position: absolute; background:#fff; border:1px solid #e6e6e6; width:100%; max-height:220px; overflow:auto; z-index:1200; border-radius:6px; margin-top:6px; box-shadow:0 6px 18px rgba(0,0,0,0.08); }
+.suggestions-wrapper { position: relative; }
+.suggestions{
+  position: absolute;
+  top: calc(100% - 0.25rem);
+  left: 0;
+  background:#fff;
+  border:1px solid #e6e6e6;
+  width:100%;
+  max-height:220px;
+  overflow:auto;
+  z-index:1200;
+  border-radius:6px;
+  margin-top:6px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.08);
+  display: none;
+}
+.suggestions:not(:empty) { display: block; }
 .suggest-item{ padding:8px 10px; cursor:pointer; border-bottom:1px solid #f5f5f5; }
 .suggest-item:hover{ background:#f7f7f7; }
 

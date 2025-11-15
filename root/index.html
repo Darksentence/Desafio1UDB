@@ -52,15 +52,15 @@
     <div class="booking-fab">
   <form class="booking-surface" id="searchForm" aria-label="Buscador de viajes">
         <div class="row g-3 align-items-end m-0">
-          <div class="col-12 col-md-4 col-lg-3">
+          <div class="col-12 col-md-4 col-lg-3 suggestions-wrapper">
             <label class="form-label">Origen</label>
             <input type="text" id="originInput" class="form-control" placeholder="Ciudad o aeropuerto" autocomplete="off" />
-            
+            <div id="originSuggestions" class="suggestions"></div>
           </div>
-          <div class="col-12 col-md-4 col-lg-3">
+          <div class="col-12 col-md-4 col-lg-3 suggestions-wrapper">
             <label class="form-label">Destino</label>
             <input type="text" id="destinationInput" class="form-control" placeholder="Ciudad o aeropuerto" autocomplete="off" />
-            
+            <div id="destinationSuggestions" class="suggestions"></div>
           </div>
           <div class="col-6 col-md-4 col-lg-2">
             <label class="form-label">Salida</label>
@@ -108,7 +108,7 @@
       <!-- grid -->
       <div class="row  g-4">
         <div class="col-12 col-sm-6 col-lg-4">
-          <a class="dest-card" href="destinos.html">
+          <a class="dest-card" href="deal-detail.html?id=paris">
             <img src="Images/paris.jpg" alt="París" />
             <span class="badge">Desde $499</span>
             <div class="dest-overlay">
@@ -117,7 +117,7 @@
           </a>
         </div>
         <div class="col-12 col-sm-6 col-lg-4">
-          <a class="dest-card" href="destinos.html">
+          <a class="dest-card" href="deal-detail.html?id=rio">
             <img src="Images/rio2.jpg" alt="Río de Janeiro" />
             <span class="badge">Desde $399</span>
             <div class="dest-overlay">
@@ -126,7 +126,7 @@
           </a>
         </div>
         <div class="col-12 col-sm-6 col-lg-4">
-          <a class="dest-card" href="destinos.html">
+          <a class="dest-card" href="deal-detail.html?id=tokio">
             <img src="Images/tokio.jpg" alt="Tokio" />
             <span class="badge">Desde $699</span>
             <div class="dest-overlay">
@@ -135,7 +135,7 @@
           </a>
         </div>
         <div class="col-12 col-sm-6 col-lg-4">
-          <a class="dest-card" href="destinos.html">
+          <a class="dest-card" href="deal-detail.html?id=roma">
             <img src="Images/rome.jpg" alt="Roma" />
             <span class="badge">Desde $549</span>
             <div class="dest-overlay">
@@ -144,7 +144,7 @@
           </a>
         </div>
         <div class="col-12 col-sm-6 col-lg-4">
-          <a class="dest-card" href="destinos.html">
+          <a class="dest-card" href="deal-detail.html?id=australia">
             <img src="Images/sydney.jpg" alt="Sídney" />
             <span class="badge">Desde $799</span>
             <div class="dest-overlay">
@@ -153,7 +153,7 @@
           </a>
         </div>
         <div class="col-12 col-sm-6 col-lg-4">
-          <a class="dest-card" href="destinos.html">
+          <a class="dest-card" href="deal-detail.html?id=marruecos">
             <img src="Images/morocco.jpg" alt="Marruecos" />
             <span class="badge">Desde $450</span>
             <div class="dest-overlay">
@@ -178,7 +178,7 @@
               <p class="deal-meta">Vuelo + Hotel 4★ · Desayuno</p>
               <div class="d-flex justify-content-between align-items-center">
                 <span class="price">$899</span>
-                <a href="deals.html" class="btn btn-sm btn-warning rounded-pill">Reservar</a>
+                <a href="deal-detail.html?id=grecia" class="btn btn-sm btn-warning rounded-pill">Reservar</a>
               </div>
             </div>
           </div>
@@ -191,7 +191,7 @@
               <p class="deal-meta">City tour · Safari en el desierto</p>
               <div class="d-flex justify-content-between align-items-center">
                 <span class="price">$1099</span>
-                <a href="deals.html" class="btn btn-sm btn-warning rounded-pill">Reservar</a>
+                <a href="deal-detail.html?id=dubai" class="btn btn-sm btn-warning rounded-pill">Reservar</a>
               </div>
             </div>
           </div>
@@ -204,7 +204,7 @@
               <p class="deal-meta">Cusco · Machu Picchu · Traslados</p>
               <div class="d-flex justify-content-between align-items-center">
                 <span class="price">$799</span>
-                <a href="deals.html" class="btn btn-sm btn-warning rounded-pill">Reservar</a>
+                <a href="deal-detail.html?id=peru" class="btn btn-sm btn-warning rounded-pill">Reservar</a>
               </div>
             </div>
           </div>
@@ -374,6 +374,7 @@
 <script src="js/navbar.js"></script>
 <script src="js/carrousel.js"></script>
   <script src="js/actions.js"></script>
+  <script src="js/chatbot.js"></script>
 <script>
 // Hero 2: pausa (speed=0) hasta cubrir ~90% del viewport; activa (speed=0.5) con offset;
 // al volver a subir y tocar el tope superior (rect.top >= 0), se reinicia: speed=0 y sin offset.
@@ -639,73 +640,7 @@
   </script>
 
 
-  <script>
-    const faqDatabase = {
-      reservas: {
-        title: 'Cómo hacer una reserva',
-        content: 'Puedes reservar a través de nuestro buscador en la página principal. Selecciona origen, destino, fechas y pasajeros. Luego elige tu paquete favorito y completa el checkout con tus datos.'
-      },
-      cancelaciones: {
-        title: 'Política de cancelaciones',
-        content: 'Las cancelaciones realizadas con 7 días de anticipación reciben 100% de reembolso. Con 3-7 días, 50%. Menos de 3 días, sin reembolso. Algunos paquetes especiales pueden tener políticas diferentes.'
-      },
-      pagos: {
-        title: 'Métodos de pago',
-        content: 'Aceptamos tarjetas de crédito (Visa, Mastercard), transferencia bancaria. Todos tus pagos están protegidos con encriptación .'
-      },
-      documentos: {
-        title: 'Documentos requeridos',
-        content: 'Necesitarás pasaporte válido para viajes internacionales. Algunos destinos requieren visa. Te enviaremos un checklist completo 30 días antes de tu viaje con toda la información necesaria.'
-      },
-      seguros: {
-        title: 'Seguros de viaje',
-        content: 'Ofrecemos seguros de viaje que cubren cancelación, asistencia médica, pérdida de equipaje y más. Puedes contratar opcionalmente durante la reserva con un descuento especial.'
-      },
-      contacto: {
-        title: 'Contactar con soporte',
-        content: 'Puedes contactarnos vía correo a info@cosmostravel.com, por teléfono al +503 2420-0346 O +503 7229-7467, o visitando nuestra página de Contacto. Atendemos de lunes a viernes 9am-6pm.'
-      }
-    };
-
-    const chatWidget = document.getElementById('chatbot-widget');
-    const chatToggle = document.getElementById('chatbot-toggle');
-    const chatClose = document.getElementById('chatbot-close');
-    const chatMessages = document.getElementById('chatbot-messages');
-    const faqButtons = document.querySelectorAll('.faq-btn');
-
-    chatToggle.addEventListener('click', () => {
-      chatWidget.classList.toggle('active');
-      if (chatWidget.classList.contains('active')) {
-        chatMessages.scrollTop = chatMessages.scrollHeight;
-      }
-    });
-
-    chatClose.addEventListener('click', () => {
-      chatWidget.classList.remove('active');
-    });
-
-    faqButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const faqKey = btn.getAttribute('data-faq');
-        const faq = faqDatabase[faqKey];
-        
-        // Agregar pregunta del usuario
-        const userMsg = document.createElement('div');
-        userMsg.className = 'chatbot-message user-message';
-        userMsg.innerHTML = `<p>${btn.textContent}</p>`;
-        chatMessages.appendChild(userMsg);
-
-        // Agregar respuesta del bot con delay
-        setTimeout(() => {
-          const botMsg = document.createElement('div');
-          botMsg.className = 'chatbot-message bot-message';
-          botMsg.innerHTML = `<p><strong>${faq.title}</strong><br>${faq.content}</p>`;
-          chatMessages.appendChild(botMsg);
-          chatMessages.scrollTop = chatMessages.scrollHeight;
-        }, 500);
-      });
-    });
-  </script>
+  
 </body>
 
 </html>

@@ -68,6 +68,14 @@ const dealData = {
         description: 'Playas, templos y paisajes tropicales. Perfecto para relajarse, practicar surf y explorar la cultura balinesa.',
         includes: ['Vuelo ida y vuelta', 'Alojamiento 4 noches', 'Traslado aeropuerto-hotel', 'Tour de templos y arrozales', 'Desayuno diario']
     },
+    'marruecos': {
+        title: 'Rutas de Marruecos',
+        meta: '6 Días / 5 Noches',
+        price: '$849',
+        image: 'Images/morocco.jpg',
+        description: 'Recorre Marrakech, duerme en el desierto y descubre mercados llenos de color con guías expertos.',
+        includes: ['Vuelo ida y vuelta', 'Alojamiento 5 noches', 'Excursión al desierto con noche en jaima', 'Traslados privados', 'Guía en español']
+    },
     'argentina': {
         title: 'Argentina: Patagonia y Buenos Aires',
         meta: '8 Días / 7 Noches',
@@ -192,6 +200,17 @@ document.addEventListener('DOMContentLoaded', () => {
         // Rellena la info de la página
         document.getElementById('detail-description').textContent = data.description;
         document.getElementById('detail-price').textContent = data.price;
+
+        const calendarBtn = document.getElementById('reserveCalendarBtn');
+        if (calendarBtn) {
+            const params = new URLSearchParams({
+                dest: dealId,
+                destName: data.title,
+                origin: 'San Salvador',
+                pax: '2'
+            });
+            calendarBtn.href = `calendario.html?${params.toString()}`;
+        }
         
         // Rellena la lista de "includes" de manera accesible y robusta
         const includesList = document.getElementById('detail-includes');
