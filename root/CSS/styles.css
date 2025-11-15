@@ -277,6 +277,18 @@ body {
 }
 .logo:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.35); }
 
+/* Variante de logo como botón de retroceso en páginas de detalle */
+.logo-back {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.logo-back i {
+  font-size: 1.1rem;
+}
+
 /* Overlay oscuro reutilizable para heroes parallax */
 .hero-overlay-dark {
   position: absolute;
@@ -2067,8 +2079,7 @@ a:visited {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
-  height: 100svh;
+  height: 105vh;
   background-color: rgba(0, 0, 0, 0.7);
 }
 
@@ -2087,18 +2098,25 @@ nav ul {
   height: 100vh;
   height: 100svh;
   list-style: none;
-  overflow-y: auto; /* permitir scroll vertical */
+  overflow-y: auto; 
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
+  align-items: stretch;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
 nav ul li {
-  height: 20%;
+  height: calc(100% / 7);
+  box-sizing: border-box;
+  padding: 0.6rem 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0; /* evitar que los items se encojan */
+  flex-shrink: 0; 
+  width: 100%;
 }
 
 nav li:nth-of-type(1) {
@@ -2121,9 +2139,17 @@ nav li:nth-of-type(5) {
   background-color: #917a5633;
 }
 
+nav li:nth-of-type(6) {
+  background-color: #2a9d8f33;
+}
+
+nav li:nth-of-type(7) {
+  background-color: #26465344;
+}
+
 nav li a {
   letter-spacing: 0.3rem;
-  font-size: 1.5rem; /* reducir de 2rem a 1.5rem para que quepa todo */
+  font-size: 1.5rem; 
   color: #fff;
   display: inline-block;
 }

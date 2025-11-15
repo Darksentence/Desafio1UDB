@@ -83,8 +83,72 @@ const dealData = {
         image: 'Images/china.jpg',
         description: 'Visita la Gran Muralla, la Ciudad Prohibida y descubre la historia milenaria china con guías expertos.',
         includes: ['Vuelo internacional', 'Alojamiento 6 noches', 'Desayunos', 'Entradas a monumentos', 'Guía en español']
+    },
+    'francia': {
+        title: 'Francia Esencial',
+        meta: '7 Días / 6 Noches',
+        price: '$1049',
+        image: 'Images/francia.jpg',
+        description: 'Un recorrido perfecto para conocer París y los principales paisajes franceses. Combina ciudad, castillos y viñedos en un solo viaje.',
+        includes: ['Vuelo ida y vuelta', '3 noches en París', '3 noches en región de Loira o Burdeos', 'Desayuno diario', 'City tour por París', 'Excursión a castillos o viñedos']
+    },
+    'australia': {
+        title: 'Australia: Costa y Ciudades',
+        meta: '9 Días / 8 Noches',
+        price: '$1799',
+        image: 'Images/sydney.jpg',
+        description: 'Descubre Sídney, sus playas y su icónica ópera, combinado con escapadas a parques naturales y costa australiana.',
+        includes: ['Vuelo internacional', 'Alojamiento 8 noches', 'Traslados aeropuerto-hotel', 'City tour por Sídney', 'Excursión a Blue Mountains o costa cercana']
+    },
+    'seattle': {
+        title: 'Seattle Urbano y Natural',
+        meta: '5 Días / 4 Noches',
+        price: '$899',
+        image: 'Images/seattle.jpg',
+        description: 'Explora la ciudad de Seattle: su famoso mercado Pike Place, la Space Needle y los paisajes verdes que la rodean.',
+        includes: ['Vuelo ida y vuelta', 'Alojamiento 4 noches', 'City tour por Seattle', 'Entrada a la Space Needle', 'Visita a mercados y barrios históricos']
+    },
+    'niagara': {
+        title: 'Niágara y Grandes Lagos',
+        meta: '4 Días / 3 Noches',
+        price: '$649',
+        image: 'Images/niagara.jpg',
+        description: 'Vive de cerca la fuerza de las Cataratas del Niágara y disfruta de paseos en barco, miradores y pueblos cercanos.',
+        includes: ['Traslados desde ciudad base (Toronto o Nueva York)', 'Alojamiento 3 noches', 'Paseo en barco por las cataratas (en temporada)', 'Entradas a miradores', 'Guía en español']
+    },
+    'korea': {
+        title: 'Corea del Sur Tecnológica y Tradicional',
+        meta: '7 Días / 6 Noches',
+        price: '$1299',
+        image: 'Images/korea.jpg',
+        description: 'Conoce Seúl, sus barrios futuristas y palacios históricos, además de probar la gastronomía coreana y el K-culture.',
+        includes: ['Vuelo internacional', 'Alojamiento 6 noches', 'City tour por Seúl', 'Visita a palacios reales', 'Excursión a zona tecnológica (Gangnam o similares)']
+    },
+    'rusia': {
+        title: 'Rusia Imperial',
+        meta: '8 Días / 7 Noches',
+        price: '$1399',
+        image: 'Images/rusia.jpg',
+        description: 'Recorre Moscú y San Petersburgo, sus palacios, catedrales y avenidas cargadas de historia y arquitectura monumental.',
+        includes: ['Vuelo internacional', 'Alojamiento 7 noches', 'Tren entre Moscú y San Petersburgo', 'Visitas guiadas a principales palacios y catedrales', 'Desayuno diario']
+    },
+    'madagascar': {
+        title: 'Madagascar Salvaje',
+        meta: '10 Días / 9 Noches',
+        price: '$1899',
+        image: 'Images/madagascar.jpg',
+        description: 'Un viaje de aventura por la naturaleza única de Madagascar: baobabs, playas vírgenes y fauna endémica.',
+        includes: ['Vuelo internacional', 'Alojamiento 9 noches', 'Traslados internos', 'Safaris fotográficos', 'Visita a reservas naturales y playas']
+    },
+    'suecia': {
+        title: 'Suecia Nórdica',
+        meta: '6 Días / 5 Noches',
+        price: '$1199',
+        image: 'Images/suecia.jpg',
+        description: 'Descubre Estocolmo y el encanto nórdico: archipiélagos, diseño escandinavo y, en temporada, auroras boreales.',
+        includes: ['Vuelo internacional', 'Alojamiento 5 noches', 'Paseo en barco por el archipiélago', 'City tour por Estocolmo', 'Seguro de viaje básico']
     }
-    // ... Agrega aquí tus otras ofertas con la misma estructura
+    // Puedes seguir agregando nuevas ofertas usando la misma estructura si añades más destinos
 };
 
 
