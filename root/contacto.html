@@ -7,6 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link rel="stylesheet" href="CSS/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/parallaxx-js/dist/parallax.css" />
 </head>
 <body>
 <!-- Shared navbar (hamburger + overlay)  -->
@@ -30,13 +31,15 @@
     </nav>
 </div>
 
-<p class="logo">NEW TRAVEL</p> <!-- marca -->
+<p class="logo">Cosmos Travel</p> <!-- marca -->
 
     <main>
-        <div class="cont hero"> <!-- hero contacto -->
-            <div class="hero-content">
-                <p class="subtitulo">contactanos</p>
-                <h1 class="titulo">RESOLVEMOS<br>TODAS TUS DUDAS</h1>
+        <!-- Hero replicado estilo index -->
+        <div id="hero-1" class="parallax" data-speed="0.5" data-image='Images/paris.jpg'>
+            <div class="hero-overlay-dark"></div>
+            <div class="text-center p-5 position-relative">
+                <span class="text-uppercase text-white fw-bold">Contáctanos</span>
+                <h1 class="mb-4 mt-2 fw-bold">Resolvemos todas tus dudas</h1>
             </div>
         </div>
         <div class="container-contacto-cont">
@@ -123,6 +126,7 @@
         </div>
     </div>
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/parallaxx-js/dist/parallax.js"></script>
 <script src="js/navbar.js"></script>
 <script src="js/actions.js"></script>
 </body>

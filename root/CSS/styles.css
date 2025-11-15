@@ -255,6 +255,35 @@ body {
   /* ensure page covers full viewport */
 }
 
+/* Logo pill style (global) */
+.logo {
+  position: fixed;
+  top: 1.2rem;
+  left: 1.6rem;
+  z-index: 1100;
+  background: rgba(0,0,0,0.55);
+  color: #fff;
+  padding: 0.55rem 1.25rem;
+  border-radius: 999px;
+  font-weight: 700;
+  letter-spacing: 0.05rem;
+  font-size: 1.35rem;
+  line-height: 1;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.28);
+  border: 1px solid rgba(255,255,255,0.18);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  text-transform: none;
+}
+.logo:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.35); }
+
+/* Overlay oscuro reutilizable para heroes parallax */
+.hero-overlay-dark {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
 main {
   flex: 1 0 auto;
   /* allow main to grow and push footer down */
